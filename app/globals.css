@@ -267,9 +267,24 @@ h2 {
   display: flex;
 }
 
+.features-head {
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+}
+
 .features-head h2 {
   max-width: 340px;
   margin: 0 auto;
+}
+
+.features-lede {
+  color: var(--muted);
+  max-width: 380px;
+  font-size: clamp(16px, 1.3vw, 19px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
 }
 
 .tile-grid {

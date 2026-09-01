@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 const description =
-  "No ads. No paywall. No account. Free 4-7-8 & box breathing. Simple guided breathwork made for sleep.";
+  "No ads. No paywall. No account. Free 4-7-8 and box breathing. Keep a few small daily habits beside it.";
 
 export const metadata: Metadata = {
   title: "Birch: Breathe, Relax & Sleep",

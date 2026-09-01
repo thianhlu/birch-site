@@ -17,6 +17,15 @@ const techniques = [
   ["Slow-Paced Breathing", "4-6"],
 ];
 
+const habits = [
+  ["Drink water", "Yes/no or count"],
+  ["Take vitamins", "Yes/no or count"],
+  ["Read", "Yes/no or count"],
+  ["Fast", "Yes/no or count"],
+  ["Walk", "Yes/no or count"],
+  ["Meditate", "Yes/no or count"],
+];
+
 export default function Home() {
   return (
     <>
@@ -41,8 +50,8 @@ export default function Home() {
               in minutes.
             </h1>
             <p className="lede">
-              No ads. No paywall. No account. Free 4-7-8 &amp; box breathing. Simple
-              guided breathwork made for sleep.
+              No ads. No paywall. No account. Free 4-7-8 and box breathing. Keep a
+              few small daily habits beside it.
             </p>
             <div className="cta-row">
               <a className="cta" href={APP} target="_blank" rel="noopener noreferrer">
@@ -61,6 +70,24 @@ export default function Home() {
               <div className="tile" key={name}>
                 <strong>{name}</strong>
                 <span>{ratio}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="features" id="habits">
+          <div className="features-head">
+            <h2>Keep a few small daily habits beside your breath.</h2>
+            <p className="features-lede">
+              Log today in one tap. See breathing and habits together across your
+              week.
+            </p>
+          </div>
+          <div className="tile-grid">
+            {habits.map(([name, detail]) => (
+              <div className="tile" key={name}>
+                <strong>{name}</strong>
+                <span>{detail}</span>
               </div>
             ))}
           </div>
@@ -85,20 +112,6 @@ export default function Home() {
             <article className="bento-card">
               <Image
                 className="bento-shot"
-                src="/images/birch-ss2.jpg"
-                alt="Breathing techniques in Birch"
-                width={420}
-                height={840}
-              />
-              <h3>Six techniques.</h3>
-              <p>
-                Weil Method (4-7-8), Box Breathing, Gentle Wave, Balance, Heart
-                Coherence, Slow-Paced Breathing.
-              </p>
-            </article>
-            <article className="bento-card">
-              <Image
-                className="bento-shot"
                 src="/images/birch-ss3.jpg"
                 alt="Habits beside breathing in Birch"
                 width={420}
@@ -106,9 +119,23 @@ export default function Home() {
               />
               <h3>Habits beside breathing.</h3>
               <p>
-                Track a few things that matter - drink water, take vitamins, read,
-                fast, walk, meditate, or create your own - and log them in one tap.
+                Track a few things that matter — drink water, take vitamins, read,
+                fast, walk, meditate, or create your own. Yes/no or count, with emoji,
+                color, and gentle reminders. Log in one tap. Breathing cycles,
+                completed habits, streaks, and monthly summaries. Useful, not another
+                chore.
               </p>
+            </article>
+            <article className="bento-card">
+              <Image
+                className="bento-shot"
+                src="/images/birch-ss2.jpg"
+                alt="Breathing techniques in Birch"
+                width={420}
+                height={840}
+              />
+              <h3>Six techniques.</h3>
+              <p>4-7-8, box breathing, and four more. Pick one and follow along.</p>
             </article>
           </div>
         </section>
@@ -116,8 +143,8 @@ export default function Home() {
         <section className="flight">
           <div className="phone">
             <Image
-              src="/images/birch-ss1.jpg"
-              alt="Birch on iPhone"
+              src="/images/birch-ss3.jpg"
+              alt="Habits beside breathing in Birch"
               width={720}
               height={1280}
               priority
