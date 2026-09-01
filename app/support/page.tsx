@@ -3,6 +3,10 @@ import Image from "next/image";
 
 const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
+const PRIVACY =
+  "https://docs.google.com/document/d/1lAYHHEQAuaKjcjjFguUm-VnnO9p8V4lCfYc6BOHUVH4/edit?usp=sharing";
+const SUPPORT =
+  "https://docs.google.com/forms/d/e/1FAIpQLScDG6nD1RzDc5NEO31206FtgrPoTFgAzyPUReW3FoJSfIYDbg/viewform";
 
 export default function Support() {
   return (
@@ -21,19 +25,11 @@ export default function Support() {
       <main className="doc wrap">
         <h1>Support</h1>
         <p className="intro">
-          Need help with Birch? Email{" "}
-          <a href="mailto:luthianh@gmail.com">luthianh@gmail.com</a>. Include your
-          iPhone model, iOS version, and what happened.
-        </p>
-        <h2>About Birch</h2>
-        <p>
-          Birch is a free breathing and habit app for iPhone, created by Thianh Lu. No
-          subscriptions, no ads, no account required. It needs iOS 18 or later.
-        </p>
-        <h2>Privacy</h2>
-        <p>
-          Read the <Link href="/privacy">Privacy Policy</Link>, or email the address
-          above.
+          Need help with Birch?{" "}
+          <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
+            Open the support form
+          </a>
+          .
         </p>
         <Link className="back" href="/">
           Back to home
@@ -46,8 +42,12 @@ export default function Support() {
             <span>Breathe, relax, sleep.</span>
           </div>
           <div className="links">
-            <Link href="/support">Support</Link>
-            <Link href="/privacy">Privacy</Link>
+            <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
+              Support
+            </a>
+            <a href={PRIVACY} target="_blank" rel="noopener noreferrer">
+              Privacy
+            </a>
             <a href={APP} target="_blank" rel="noopener noreferrer">
               App Store
             </a>

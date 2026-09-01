@@ -3,6 +3,10 @@ import Link from "next/link";
 
 const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
+const PRIVACY =
+  "https://docs.google.com/document/d/1lAYHHEQAuaKjcjjFguUm-VnnO9p8V4lCfYc6BOHUVH4/edit?usp=sharing";
+const SUPPORT =
+  "https://docs.google.com/forms/d/e/1FAIpQLScDG6nD1RzDc5NEO31206FtgrPoTFgAzyPUReW3FoJSfIYDbg/viewform";
 
 const techniques = [
   ["Weil Method", "4-7-8"],
@@ -10,7 +14,7 @@ const techniques = [
   ["Gentle Wave", "7-11"],
   ["Balance", "3-3-6-3"],
   ["Heart Coherence", "6-6"],
-  ["Slow-Paced", "4-6"],
+  ["Slow-Paced Breathing", "4-6"],
 ];
 
 export default function Home() {
@@ -37,8 +41,8 @@ export default function Home() {
               in minutes.
             </h1>
             <p className="lede">
-              Free 4-7-8 and box breathing for iPhone. Four more patterns, optional
-              habits. No ads, no paywall, no account.
+              No ads. No paywall. No account. Free 4-7-8 &amp; box breathing. Simple
+              guided breathwork made for sleep.
             </p>
             <div className="cta-row">
               <a className="cta" href={APP} target="_blank" rel="noopener noreferrer">
@@ -50,7 +54,7 @@ export default function Home() {
 
         <section className="features" id="features">
           <div className="features-head">
-            <h2>Six techniques. Pick one and follow the card.</h2>
+            <h2>Choose a breathing pattern. Follow the visual guide.</h2>
           </div>
           <div className="tile-grid">
             {techniques.map(([name, ratio]) => (
@@ -72,14 +76,10 @@ export default function Home() {
                 width={420}
                 height={840}
               />
-              <h3>
-                Watch the card.
-                <br />
-                Breathe with it.
-              </h3>
+              <h3>Follow the visual guide.</h3>
               <p>
-                Inhale, hold, exhale. Set a time or a number of cycles. The grainy
-                green-to-blue pulse is the session.
+                Choose a breathing pattern, set a time or number of cycles, and follow
+                as you breathe, hold, and exhale.
               </p>
             </article>
             <article className="bento-card">
@@ -90,14 +90,10 @@ export default function Home() {
                 width={420}
                 height={840}
               />
-              <h3>
-                Six techniques.
-                <br />
-                Switch anytime.
-              </h3>
+              <h3>Six techniques.</h3>
               <p>
-                Weil 4-7-8, box breathing, gentle wave, balance, heart coherence,
-                slow-paced.
+                Weil Method (4-7-8), Box Breathing, Gentle Wave, Balance, Heart
+                Coherence, Slow-Paced Breathing.
               </p>
             </article>
             <article className="bento-card">
@@ -108,14 +104,10 @@ export default function Home() {
                 width={420}
                 height={840}
               />
-              <h3>
-                Habits beside
-                <br />
-                breathing.
-              </h3>
+              <h3>Habits beside breathing.</h3>
               <p>
-                Optional. Water, walks, vitamins, or anything you name. Log today in
-                one tap and see the week.
+                Track a few things that matter - drink water, take vitamins, read,
+                fast, walk, meditate, or create your own - and log them in one tap.
               </p>
             </article>
           </div>
@@ -140,10 +132,11 @@ export default function Home() {
 
         <section className="privacy wrap">
           <p>
-            <strong>No ads. No subscriptions. No account.</strong>
+            <strong>No subscriptions. No ads. No account.</strong>
             <br />
-            Sessions can count toward Mindful Minutes in Apple Health. Birch is for
-            general wellness, not a substitute for professional medical advice.
+            Birch works without an account. Sessions can count toward Mindful Minutes
+            in Apple Health. Birch supports general wellness and is not a substitute
+            for professional medical advice.
           </p>
         </section>
       </main>
@@ -155,8 +148,12 @@ export default function Home() {
             <span>Breathe, relax, sleep.</span>
           </div>
           <div className="links">
-            <Link href="/support">Support</Link>
-            <Link href="/privacy">Privacy</Link>
+            <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
+              Support
+            </a>
+            <a href={PRIVACY} target="_blank" rel="noopener noreferrer">
+              Privacy
+            </a>
             <a href={APP} target="_blank" rel="noopener noreferrer">
               App Store
             </a>

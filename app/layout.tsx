@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const description =
+  "No ads. No paywall. No account. Free 4-7-8 & box breathing. Simple guided breathwork made for sleep.";
+
 export const metadata: Metadata = {
   title: "Birch: Breathe, Relax & Sleep",
-  description:
-    "Free guided breathing for iPhone. No ads, no paywall, no account required.",
+  description,
   authors: [{ name: "Thianh Lu" }],
   openGraph: {
     title: "Birch: Breathe, Relax & Sleep",
-    description:
-      "Free guided breathing for iPhone. No ads, no paywall, no account required.",
+    description,
     type: "website",
   },
   icons: { icon: "/images/birch-icon.png" },

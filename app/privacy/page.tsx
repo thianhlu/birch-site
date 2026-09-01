@@ -3,6 +3,10 @@ import Image from "next/image";
 
 const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
+const PRIVACY =
+  "https://docs.google.com/document/d/1lAYHHEQAuaKjcjjFguUm-VnnO9p8V4lCfYc6BOHUVH4/edit?usp=sharing";
+const SUPPORT =
+  "https://docs.google.com/forms/d/e/1FAIpQLScDG6nD1RzDc5NEO31206FtgrPoTFgAzyPUReW3FoJSfIYDbg/viewform";
 
 export default function Privacy() {
   return (
@@ -20,35 +24,12 @@ export default function Privacy() {
       </header>
       <main className="doc wrap">
         <h1>Privacy Policy</h1>
-        <p className="updated">Last updated: September 1, 2026</p>
         <p className="intro">
-          Birch is designed so you can breathe without making an account. This page
-          explains what stays on your iPhone and what does not.
-        </p>
-        <h2>No account required</h2>
-        <p>
-          You do not create a Birch account. You do not give us a name, email, or
-          password to start a session.
-        </p>
-        <h2>Data that stays on your device</h2>
-        <p>
-          Breathing sessions, techniques, timers, and any habits you create are stored
-          on your iPhone. Deleting the app deletes this data.
-        </p>
-        <h2>Apple Health</h2>
-        <p>
-          If you allow it, Birch can write Mindful Minutes to Apple Health. That data
-          stays in Health on your device. Birch does not read your Health history.
-        </p>
-        <h2>What we do not do</h2>
-        <ul>
-          <li>No advertising SDKs and no ad tracking</li>
-          <li>No selling or renting of personal data</li>
-          <li>No account graph, no social feed</li>
-        </ul>
-        <h2>Contact</h2>
-        <p>
-          Questions: <a href="mailto:luthianh@gmail.com">luthianh@gmail.com</a>
+          Birch&apos;s privacy policy lives on Google Docs.{" "}
+          <a href={PRIVACY} target="_blank" rel="noopener noreferrer">
+            Open the privacy policy
+          </a>
+          .
         </p>
         <Link className="back" href="/">
           Back to home
@@ -61,8 +42,12 @@ export default function Privacy() {
             <span>Breathe, relax, sleep.</span>
           </div>
           <div className="links">
-            <Link href="/support">Support</Link>
-            <Link href="/privacy">Privacy</Link>
+            <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
+              Support
+            </a>
+            <a href={PRIVACY} target="_blank" rel="noopener noreferrer">
+              Privacy
+            </a>
             <a href={APP} target="_blank" rel="noopener noreferrer">
               App Store
             </a>
