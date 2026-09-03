@@ -76,7 +76,7 @@ img {
   max-width: var(--page);
 }
 
-header {
+.site-header {
   z-index: 30;
   position: sticky;
   top: 0;
@@ -105,9 +105,11 @@ header {
 }
 
 .brand img {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
 }
 
 .brand span {

@@ -103,10 +103,10 @@ function ProofPill() {
 export default function Home() {
   return (
     <>
-      <header>
+      <header className="site-header">
         <div className="navpill">
           <Link className="brand" href="/">
-            <Image src="/images/birch-icon.png" alt="" width={36} height={36} />
+            <Image src="/images/birch-mark.png" alt="" width={28} height={28} />
             <span>Birch</span>
           </Link>
           <nav className="nav-links" aria-label="Page">
