@@ -124,13 +124,13 @@ export default function Home() {
             <div className="hero-copy">
               <ProofPill />
               <h1>
-                Breathe better
+                Breathe better.
                 <br />
-                in minutes.
+                Keep small habits.
               </h1>
               <p className="lede">
-                Choose a pattern. Follow the visual guide. Keep a few small daily
-                habits beside your breath. No ads, no account, no subscription.
+                Choose a pattern. Follow the visual guide. Log a few daily habits
+                beside your breath. No ads, no account, no subscription.
               </p>
               <div className="cta-row">
                 <a className="cta" href={APP} target="_blank" rel="noopener noreferrer">
