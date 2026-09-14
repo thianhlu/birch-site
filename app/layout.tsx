@@ -47,7 +47,7 @@ export const metadata: Metadata = {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Birch: Breathe better in minutes. 4.9 stars from 111 US ratings.",
+        alt: "Birch: Breathe better. Keep small habits. 4.9 stars from 113 US ratings.",
       },
     ],
   },

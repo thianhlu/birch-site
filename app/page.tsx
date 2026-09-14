@@ -94,7 +94,7 @@ function ProofPill() {
     <p className="proof-pill">
       <Stars />
       <span>
-        <strong>4.9</strong> from 111 US ratings
+        <strong>4.9</strong> from 113 US ratings
       </span>
     </p>
   );
@@ -340,7 +340,7 @@ export default function Home() {
         <section className="band wash-hero close">
           <div className="band-inner narrow close-inner">
             <Stars size={36} />
-            <h2>4.9 from 111 US ratings</h2>
+            <h2>4.9 from 113 US ratings</h2>
             <p>Free on the App Store. No ads, no account, no subscription.</p>
             <div className="cta-row">
               <a className="cta" href={APP} target="_blank" rel="noopener noreferrer">
