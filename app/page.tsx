@@ -53,7 +53,7 @@ const faqs = [
   ],
   [
     "Can I track habits?",
-    "Yes. Drink water, take vitamins, read, fast, walk, meditate, or create your own. Yes/no or a count, logged in one tap, shown beside your breathing across the week.",
+    "Yes. Drink water, take vitamins, read, fast, walk, meditate, or create your own. Yes/no or a count, logged in one tap, shown beside your breathing across your week and month.",
   ],
 ];
 
@@ -194,9 +194,9 @@ export default function Home() {
             <header className="band-head">
               <h2>Keep small daily habits beside your breath.</h2>
               <p>
-                Log today in one tap. Yes/no or a count, with emoji, color, and
-                gentle reminders. See breathing and habits together across your
-                week.
+                Log today or a recent day in one tap. Yes/no or a count, with
+                emoji, color, and gentle reminders. See breathing and habits
+                together across your week and month.
               </p>
             </header>
             <div className="habit-grid">
