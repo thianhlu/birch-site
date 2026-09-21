@@ -196,7 +196,9 @@ export default function Home() {
               <p>
                 Log today or a recent day in one tap. Yes/no or a count, with
                 emoji, color, and gentle reminders. See breathing and habits
-                together across your week and month.
+                together across your week and month — cycles, streaks, and
+                monthly summaries at a glance, without turning it into another
+                chore.
               </p>
             </header>
             <div className="habit-grid">
