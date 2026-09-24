@@ -165,7 +165,9 @@ export default function Home() {
               <h2>Six techniques. Follow the visual guide.</h2>
               <p>
                 Start with 4-7-8 or box breathing. Set a time or a number of
-                cycles, then follow inhale, hold, and exhale.
+                cycles, then follow inhale, hold, and exhale. Use it to slow
+                down before sleep, reset during a stressful day, or take a
+                quiet minute for yourself.
               </p>
             </header>
             <div className="tech-grid">
