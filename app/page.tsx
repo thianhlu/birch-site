@@ -236,15 +236,15 @@ export default function Home() {
             <div className="why-grid">
               <article className="card">
                 <h3>Free. Forever.</h3>
-                <p>No ads, no paywall, no subscription. Download it and breathe.</p>
+                <p>No ads, no paywall, no subscription. Breathing and habits are both included.</p>
               </article>
               <article className="card">
                 <h3>No account.</h3>
-                <p>Nothing to sign up for. Your practice stays on your phone.</p>
+                <p>Nothing to sign up for. Open Birch, start a session, or log a habit.</p>
               </article>
               <article className="card">
-                <h3>Private by default.</h3>
-                <p>No feed, no tracking for ads. Just the session in front of you.</p>
+                <h3>Private by design.</h3>
+                <p>No feed to scroll, nothing to keep up with. Just today’s breath and habits.</p>
               </article>
               <article className="card">
                 <h3>Apple Health.</h3>
