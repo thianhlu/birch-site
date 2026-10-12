@@ -344,8 +344,11 @@ export default function Home() {
         <section className="band wash-hero close">
           <div className="band-inner narrow close-inner">
             <Stars size={36} />
-            <h2>4.9 from 114 US ratings</h2>
-            <p>Free on the App Store. No ads, no account, no subscription.</p>
+            <h2>Take one calm breath. Then build from there.</h2>
+            <p>
+              Free breathing and habits on the App Store. No ads, no account, no
+              subscription. 4.9 from 114 US ratings.
+            </p>
             <div className="cta-row">
               <a className="cta" href={APP} target="_blank" rel="noopener noreferrer">
                 Get Birch free
@@ -364,7 +367,7 @@ export default function Home() {
         <div className="wide wrap">
           <div className="foot-brand">
             <strong>Birch</strong>
-            <span>Breathe, relax, sleep.</span>
+            <span>Breathing and small habits.</span>
             <StoreBadge />
           </div>
           <div className="links">
