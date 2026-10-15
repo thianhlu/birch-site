@@ -123,6 +123,7 @@ export default function Home() {
           <div className="hero-inner">
             <div className="hero-copy">
               <ProofPill />
+              <p className="hero-kicker">4-7-8, Box Breathing &amp; Habits</p>
               <h1>
                 Breathe better.
                 <br />
