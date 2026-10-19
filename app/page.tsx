@@ -258,8 +258,8 @@ export default function Home() {
         <section className="band wash-blue" id="screens">
           <div className="band-inner">
             <header className="band-head">
-              <h2>Designed to be followed, not fidgeted with.</h2>
-              <p>The same screens, presented with a little more room to look.</p>
+              <h2>Breathing and habits, without the clutter.</h2>
+              <p>The same screens from Birch, with a little more room to look.</p>
             </header>
             <div className="gallery">
               <figure>
@@ -301,7 +301,10 @@ export default function Home() {
                 </div>
                 <figcaption>
                   <h3>Habits beside breathing.</h3>
-                  <p>Water, vitamins, read, fast, walk, meditate, or your own.</p>
+                  <p>
+                    Water, vitamins, read, fast, walk, meditate, or your own.
+                    Progress without pressure.
+                  </p>
                 </figcaption>
               </figure>
             </div>
