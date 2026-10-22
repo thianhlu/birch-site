@@ -18,13 +18,13 @@ const techniques = [
 ];
 
 const habits = [
-  ["💧", "Drink water", "Yes/no or a count"],
-  ["💊", "Take vitamins", "Yes/no or a count"],
-  ["📖", "Read", "Yes/no or a count"],
-  ["⏳", "Fast", "Yes/no or a count"],
-  ["🚶", "Walk", "Yes/no or a count"],
-  ["🧘", "Meditate", "Yes/no or a count"],
-  ["✨", "Custom", "Emoji, color, reminders"],
+  ["💧", "Drink water", "Count it, one tap at a time"],
+  ["💊", "Take vitamins", "Yes/no, with a gentle reminder"],
+  ["📖", "Read", "Log today or a recent day"],
+  ["⏳", "Fast", "Yes/no, on your calendar"],
+  ["🚶", "Walk", "Streaks and monthly summaries"],
+  ["🧘", "Meditate", "Beside your breathing all week"],
+  ["✨", "Custom", "Your own emoji and color"],
 ];
 
 const quotes = [
