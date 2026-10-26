@@ -55,6 +55,10 @@ const faqs = [
     "Can I track habits?",
     "Yes. Drink water, take vitamins, read, fast, walk, meditate, or create your own. Yes/no or a count, logged in one tap, shown beside your breathing across your week and month.",
   ],
+  [
+    "Can Birch remind me about my habits?",
+    "Yes. Set gentle reminders at times you choose. Missed one? Log today or update a recent day, then see breathing cycles, completed habits, streaks, and monthly summaries together. Progress without pressure.",
+  ],
 ];
 
 function Stars({ size = 16 }: { size?: number }) {
