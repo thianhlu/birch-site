@@ -61,6 +61,35 @@ const faqs = [
   ],
 ];
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "Birch: Breathe, Relax & Sleep",
+  alternateName: "Birch",
+  operatingSystem: "iOS",
+  applicationCategory: "HealthApplication",
+  url: "https://birch-breathe.vercel.app",
+  installUrl: APP,
+  description:
+    "Free 4-7-8 and box breathing with simple habit tracking. No subscriptions. No ads. No account.",
+  featureList: [
+    "Six guided breathing techniques, including 4-7-8 and box breathing",
+    "Yes/no or count-based habits with emoji and color",
+    "Gentle reminders at times you choose",
+    "Breathing and habits together across your week and calendar",
+    "Streaks and monthly summaries",
+    "Mindful Minutes in Apple Health",
+  ],
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    ratingCount: "114",
+    bestRating: "5",
+  },
+  author: { "@type": "Organization", name: "Tsukemen.io" },
+};
+
 function Stars({ size = 16 }: { size?: number }) {
   return (
     <span className="stars" aria-hidden="true">
@@ -123,6 +152,10 @@ export default function Home() {
       </header>
 
       <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <section className="hero band wash-hero">
           <div className="hero-inner">
             <div className="hero-copy">
