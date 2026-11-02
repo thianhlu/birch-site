@@ -52,6 +52,10 @@ const faqs = [
     "Sessions can count toward Mindful Minutes in Apple Health.",
   ],
   [
+    "Is Birch on Apple Watch?",
+    "Yes. Take a breathing break right from your wrist, with six breathing patterns, gentle haptic cues, and sessions from 1 to 5 minutes. Completed sessions sync to Birch on your iPhone and can save Mindful Minutes to Apple Health. Requires watchOS 11 or later.",
+  ],
+  [
     "Can I track habits?",
     "Yes. Drink water, take vitamins, read, fast, walk, meditate, or create your own. Yes/no or a count, logged in one tap, shown beside your breathing across your week and month.",
   ],
@@ -79,12 +83,13 @@ const jsonLd = {
     "Breathing and habits together across your week and calendar",
     "Streaks and monthly summaries",
     "Mindful Minutes in Apple Health",
+    "Apple Watch breathing with gentle haptic cues",
   ],
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.9",
-    ratingCount: "114",
+    ratingCount: "115",
     bestRating: "5",
   },
   author: { "@type": "Organization", name: "Tsukemen.io" },
@@ -127,7 +132,7 @@ function ProofPill() {
     <p className="proof-pill">
       <Stars />
       <span>
-        <strong>4.9</strong> from 114 US ratings
+        <strong>4.9</strong> from 115 US ratings
       </span>
     </p>
   );
@@ -388,7 +393,7 @@ export default function Home() {
             <h2>Take one calm breath. Then build from there.</h2>
             <p>
               Free breathing and habits on the App Store. No ads, no account, no
-              subscription. 4.9 from 114 US ratings.
+              subscription. 4.9 from 115 US ratings.
             </p>
             <div className="cta-row">
               <a className="cta" href={APP} target="_blank" rel="noopener noreferrer">
