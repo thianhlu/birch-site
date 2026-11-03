@@ -9,38 +9,38 @@ const items: Item[] = [
   {
     title: "Mindful Minutes",
     body: "Completed sessions can save Mindful Minutes to Apple Health, from your iPhone or your watch.",
-    screen: "/images/screen-breathe.webp",
+    screen: "/devices/phone-breathe.webp",
     alt: "A Birch breathing session in progress",
   },
   {
     title: "Gentle reminders",
-    body: "Set gentle reminders for your habits at the times you choose. Missed a day? Log today or a recent day.",
-    screen: "/images/screen-habits.webp",
-    alt: "Habits for today in Birch",
+    body: "Set reminders for your habits at the times you choose. Missed a day? Log today or a recent day.",
+    screen: "/devices/phone-reminders.webp",
+    alt: "Weekly and monthly recap reminders switched on in Birch",
   },
   {
     title: "Your week at a glance",
     body: "See breathing and habits together across your week and month, with streaks and monthly summaries.",
-    screen: "/images/screen-habits.webp",
-    alt: "Week rings above today's habits in Birch",
+    screen: "/devices/phone-week.webp",
+    alt: "A month calendar with one day's breathing and habits in Birch",
   },
   {
     title: "Your own habits",
     body: "Make any habit with your own emoji and color. Yes/no or a count, whatever fits.",
-    screen: "/images/screen-habits.webp",
-    alt: "Custom habit tiles in Birch",
+    screen: "/devices/phone-newhabit.webp",
+    alt: "Creating a Drink Water habit with a count and a color in Birch",
   },
   {
     title: "Pick a pattern, any time",
     body: "Switch between 4-7-8, box breathing, and four more patterns whenever you like.",
-    screen: "/images/screen-techniques.webp",
-    alt: "The six breathing techniques in Birch",
+    screen: "/devices/phone-techniques.webp",
+    alt: "The breathing techniques list in Birch",
   },
   {
     title: "No account",
     body: "Nothing to sign up for. Open Birch, start a session, or log a habit.",
-    screen: "/images/screen-breathe.webp",
-    alt: "Birch opens straight to breathing",
+    screen: "/devices/phone-habits.webp",
+    alt: "Birch opens straight to today's breathing and habits",
   },
 ];
 
@@ -72,9 +72,8 @@ export default function MoreFeatures() {
         ))}
       </ul>
       <div className="more-device">
-        <div className="phone phone-lg">
-          <span className="island" aria-hidden="true" />
-          <Image key={current.screen + active} className="fade-swap" src={current.screen} alt={current.alt} width={800} height={1272} sizes="(max-width: 880px) 70vw, 320px" />
+        <div className="device-phone more-phone">
+          <Image key={current.screen + active} className="fade-swap" src={current.screen} alt={current.alt} width={675} height={1380} sizes="(max-width: 880px) 70vw, 340px" />
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import MoreFeatures from "./components/MoreFeatures";
 import Reveal from "./components/Reveal";
+import { Phone, Watch } from "./components/Devices";
 
 const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
@@ -154,44 +155,6 @@ function RatingLine({ dark = false }: { dark?: boolean }) {
   );
 }
 
-function Phone({
-  src,
-  alt,
-  className = "",
-  priority = false,
-  sizes = "320px",
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-  priority?: boolean;
-  sizes?: string;
-}) {
-  return (
-    <div className={`phone ${className}`}>
-      <span className="island" aria-hidden="true" />
-      <Image src={src} alt={alt} width={800} height={1272} priority={priority} sizes={sizes} />
-    </div>
-  );
-}
-
-function Watch({ className = "" }: { className?: string }) {
-  return (
-    <div className={`watch ${className}`} aria-hidden="true">
-      <span className="watch-band top" />
-      <span className="watch-band bottom" />
-      <span className="watch-crown" />
-      <div className="watch-case">
-        <div className="watch-screen">
-          <span className="watch-time">9:41</span>
-          <span className="watch-orb" />
-          <span className="watch-label">Breathe</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Laurel({ children }: { children: React.ReactNode }) {
   const leaf = (
     <svg viewBox="0 0 24 56" width="18" height="44" aria-hidden="true">
@@ -246,13 +209,12 @@ export default function Home() {
           <div className="hero-frame">
             <Image
               className="hero-bg"
-              src="/photos/sky.webp"
+              src="/photos/hero-birch.webp"
               alt=""
               fill
               priority
               sizes="100vw"
             />
-            <div className="aurora" aria-hidden="true" />
             <div className="hero-copy">
               <h1>
                 Breathe better.
@@ -269,12 +231,17 @@ export default function Home() {
             <div className="hero-devices">
               <Phone
                 className="hero-phone"
-                src="/images/screen-breathe.webp"
-                alt="A box breathing session in Birch"
+                screen="breathe"
+                alt="A box breathing session in Birch on iPhone"
                 priority
-                sizes="(max-width: 880px) 62vw, 330px"
+                sizes="(max-width: 880px) 60vw, 320px"
               />
-              <Watch className="hero-watch" />
+              <Watch
+                className="hero-watch"
+                screen="breathing"
+                alt="Birch on Apple Watch guiding an exhale"
+                sizes="(max-width: 880px) 36vw, 190px"
+              />
               <div className="chip chip-a">
                 <span className="chip-dot lime" />
                 <span>
@@ -314,22 +281,6 @@ export default function Home() {
             <span className="app-card-get">Get</span>
           </a>
         </div>
-
-        {/* Works with */}
-        <section className="works reveal">
-          <h2>Works with</h2>
-          <ul>
-            <li>
-              <AppleGlyph size={16} /> iPhone
-            </li>
-            <li>
-              <AppleGlyph size={16} /> Watch
-            </li>
-            <li>
-              <span className="heart" aria-hidden="true">♥</span> Apple Health
-            </li>
-          </ul>
-        </section>
 
         {/* Social proof + moments carousel */}
         <section className="section proof">
@@ -384,7 +335,7 @@ export default function Home() {
               </div>
               <Phone
                 className="peek"
-                src="/images/screen-breathe.webp"
+                screen="breathe"
                 alt="Birch guiding an inhale during box breathing"
                 sizes="(max-width: 880px) 70vw, 280px"
               />
@@ -399,7 +350,7 @@ export default function Home() {
               </div>
               <Phone
                 className="peek"
-                src="/images/screen-techniques.webp"
+                screen="techniques"
                 alt="The six breathing techniques in Birch"
                 sizes="(max-width: 880px) 70vw, 280px"
               />
@@ -461,7 +412,7 @@ export default function Home() {
               </ul>
               <Phone
                 className="habit-phone"
-                src="/images/screen-habits.webp"
+                screen="habits"
                 alt="Today's habits in Birch: daily walk, meditate, cold plunge, vitamins"
                 sizes="(max-width: 880px) 60vw, 260px"
               />
@@ -500,7 +451,7 @@ export default function Home() {
         {/* Apple Watch — dark band */}
         <section className="dark-band" id="watch">
           <div className="dark-inner">
-            <header className="section-head on-dark reveal">
+            <header className="watch-copy on-dark reveal">
               <span className="new-pill">New in Birch 3.5</span>
               <h2 className="display">
                 Now on
@@ -508,53 +459,33 @@ export default function Home() {
                 Apple Watch
               </h2>
               <p>
-                Take a breathing break right from your wrist. Gentle haptic cues
-                pace each breath, so you can keep your eyes closed.
+                Take a breathing break right from your wrist. Haptic cues pace
+                each breath, so you can keep your eyes closed.
               </p>
+              <ul className="watch-facts">
+                <li>Six patterns</li>
+                <li>1 to 5 minutes</li>
+                <li>Syncs to iPhone</li>
+                <li>Mindful Minutes in Apple Health</li>
+              </ul>
+              <small className="watch-req">Requires watchOS 11 or later.</small>
             </header>
-            <article className="watch-hero reveal">
-              <Image
-                src="/photos/wrist.webp"
-                alt="A wrist with a smartwatch resting on a knee in a misty birch forest"
-                fill
-                sizes="(max-width: 880px) 100vw, 1180px"
+            <div className="watch-row reveal" aria-label="Birch on Apple Watch">
+              <Watch
+                className="w1"
+                screen="start"
+                alt="Starting a one-minute slow-paced session on Apple Watch"
               />
-              <div className="watch-hero-copy">
-                <h3>A breath on your wrist</h3>
-                <p>Six patterns, from 1 to 5 minutes, wherever you are.</p>
-              </div>
-            </article>
-            <div className="watch-grid">
-              <article className="glow-card glow-lime reveal">
-                <Watch className="card-watch" />
-                <h3>Feel the rhythm</h3>
-                <p>Gentle haptic cues for inhale, hold, and exhale.</p>
-              </article>
-              <article className="glow-card glow-blue reveal">
-                <div className="sync" aria-hidden="true">
-                  <span>⌚︎</span>
-                  <i />
-                  <span>📱</span>
-                  <i />
-                  <span className="heart">♥</span>
-                </div>
-                <h3>Syncs to your iPhone</h3>
-                <p>
-                  Completed sessions sync to Birch on iPhone and can save Mindful
-                  Minutes to Apple Health.
-                </p>
-              </article>
-              <article className="glow-card glow-blush reveal">
-                <div className="durations" aria-hidden="true">
-                  {[1, 2, 3, 4, 5].map((m) => (
-                    <span key={m} className={m === 3 ? "on" : ""}>
-                      {m}m
-                    </span>
-                  ))}
-                </div>
-                <h3>1 to 5 minutes</h3>
-                <p>Short enough for a meeting break. Requires watchOS 11 or later.</p>
-              </article>
+              <Watch
+                className="w2"
+                screen="breathing"
+                alt="An exhale in progress on Apple Watch"
+              />
+              <Watch
+                className="w3"
+                screen="patterns"
+                alt="Choosing a breathing pattern on Apple Watch"
+              />
             </div>
           </div>
         </section>
@@ -570,22 +501,21 @@ export default function Home() {
 
         {/* Privacy */}
         <section className="section tight" id="why">
-          <article className="privacy reveal">
-            <Image
-              className="privacy-mark"
-              src="/images/birch-mark.png"
-              alt=""
-              width={371}
-              height={371}
-            />
-            <div className="privacy-copy">
-              <h2 className="display">Free, private, quiet</h2>
+          <article className="free-band reveal">
+            <p className="free-price" aria-hidden="true">$0</p>
+            <div className="free-copy">
+              <h2>Birch is completely free.</h2>
               <p>
-                No ads, no paywall, no subscription, no account. Breathing and
-                habits are both included. Nothing to sign up for, and no feed to
-                keep up with.
+                Breathing, habits, and the Apple Watch app are all included. No
+                trial, nothing locked.
               </p>
             </div>
+            <ul className="free-list">
+              <li>No ads</li>
+              <li>No subscription</li>
+              <li>No in-app purchases</li>
+              <li>No account</li>
+            </ul>
           </article>
         </section>
 
@@ -648,10 +578,11 @@ export default function Home() {
         {/* Final CTA */}
         <section className="final">
           <header className="section-head reveal">
-            <h2 className="display">Ready when you are</h2>
+            <h2 className="display">Your next breath is free</h2>
             <p>
-              Take one calm breath, then build from there. Free on the App
-              Store. No ads, no account, no subscription.
+              Open Birch, pick a pattern, and follow along. Add a habit
+              whenever you like. Free on the App Store, with no ads, no account,
+              and no subscription.
             </p>
             <StoreBadge />
           </header>
