@@ -44,9 +44,23 @@ const items: Item[] = [
   },
 ];
 
+function ArrowIcon() {
+  // Lucide-style arrow-up-right, 24px grid, rounded caps and joins.
+  return (
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+      <path d="M7 17 17 7" />
+      <path d="M8.5 7H17v8.5" />
+    </svg>
+  );
+}
+
 export default function MoreFeatures() {
-  const [active, setActive] = useState(0);
-  const current = items[active];
+  // Keep the previous screen fully opaque underneath while the new one fades in on top,
+  // so the phone never shows a blank or see-through frame, even on fast repeated taps.
+  const [{ active, prev }, setState] = useState({ active: 0, prev: -1 });
+  const select = (i: number) =>
+    setState((s) => (s.active === i ? s : { active: i, prev: s.active }));
+
   return (
     <div className="more">
       <ul className="more-list">
@@ -56,24 +70,40 @@ export default function MoreFeatures() {
               type="button"
               className={i === active ? "more-item active" : "more-item"}
               aria-expanded={i === active}
-              onClick={() => setActive(i)}
+              aria-controls="more-screens"
+              onClick={() => select(i)}
             >
               <span className="more-text">
                 <strong>{item.title}</strong>
-                <span>{item.body}</span>
+                <span className="more-body">
+                  <span>
+                    <span className="more-copy">{item.body}</span>
+                  </span>
+                </span>
               </span>
-              <span className="more-icon" aria-hidden="true">
-                <svg viewBox="0 0 20 20" width="14" height="14">
-                  <path d="M5 10h10M11 6l4 4-4 4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <span className="more-icon">
+                <ArrowIcon />
               </span>
             </button>
           </li>
         ))}
       </ul>
       <div className="more-device">
-        <div className="device-phone more-phone">
-          <Image key={current.screen + active} className="fade-swap" src={current.screen} alt={current.alt} width={675} height={1380} sizes="(max-width: 880px) 70vw, 340px" />
+        <div className="device-phone more-phone" id="more-screens">
+          {items.map((item, i) => (
+            <Image
+              key={item.screen}
+              className={"more-shot" + (i === active ? " is-active" : i === prev ? " is-prev" : "")}
+              src={item.screen}
+              alt={i === active ? item.alt : ""}
+              aria-hidden={i === active ? undefined : true}
+              width={675}
+              height={1380}
+              loading="eager"
+              decoding="async"
+              sizes="(max-width: 880px) 280px, 340px"
+            />
+          ))}
         </div>
       </div>
     </div>
