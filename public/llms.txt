@@ -1,0 +1,29 @@
+# Birch: Breathe, Relax & Sleep
+
+> Birch is a free iOS and watchOS app for guided breathing (including 4-7-8 and box breathing) with simple habit tracking beside it. No ads, no account, no subscription, no in-app purchases.
+
+- App Store: https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381
+- Price: Free
+- Platforms: iPhone (iOS) and Apple Watch (watchOS 11 or later)
+- Rating: 4.9 average from 115 US App Store ratings
+- Developer: Tsukemen.io
+
+## Key facts
+
+- Six breathing patterns: Weil Method (4-7-8: inhale 4, hold 7, exhale 8), Box Breathing (4-4-4-4), Gentle Wave (7-11), Balance, Heart Coherence, and Slow-Paced breathing.
+- Set a time or a number of cycles and follow inhale, hold, and exhale on screen.
+- Habits: yes/no or count-based (for example drink water, take vitamins, read, fast, walk, meditate, or your own), with emoji, color, and reminders at times you choose.
+- Breathing and habits show together across your week and month, with streaks and monthly summaries. You can log today or a recent day.
+- Apple Watch app (new in Birch 3.5): six patterns, sessions from 1 to 5 minutes, haptic cues for each breath. Completed sessions sync to Birch on iPhone.
+- Sessions can count toward Mindful Minutes in Apple Health.
+- No account is needed.
+
+## Not
+
+- Birch is a general wellness app. It does not diagnose, treat, or monitor any medical condition and is not a substitute for professional medical advice.
+
+## More
+
+- [Full details for language models](https://birch-breathe.vercel.app/llms-full.txt)
+- [Privacy policy](https://birch-breathe.vercel.app/privacy)
+- [Support](https://birch-breathe.vercel.app/support)

@@ -1,0 +1,58 @@
+# Birch: Breathe, Relax & Sleep (full details)
+
+Birch is a free app for iPhone and Apple Watch. Breathing is the core: pick a pattern and follow a visual guide (and, on Apple Watch, haptic cues) for each inhale, hold, and exhale. Small daily habits live beside your breathing in the same app.
+
+App Store: https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381
+Price: Free. No ads, no subscription, no in-app purchases, no account.
+Rating: 4.9 average from 115 US App Store ratings.
+Requires: iOS on iPhone; watchOS 11 or later for the Apple Watch app.
+Developer: Tsukemen.io
+
+## Breathing
+
+- Weil Method: inhale 4, hold 7, exhale 8 (often called 4-7-8 breathing)
+- Box Breathing: 4-4-4-4
+- Gentle Wave: inhale 7, exhale 11
+- Balance
+- Heart Coherence
+- Slow-Paced breathing
+- Choose a duration or a number of cycles. The screen paces each phase so you don't have to count.
+- Sessions can be saved as Mindful Minutes in Apple Health.
+
+## Habits
+
+- Built-in ideas: drink water, take vitamins, read, fast, walk, meditate. You can also create your own with any emoji and color.
+- Each habit is yes/no or a count (for example 3 of 8 glasses of water).
+- Log in one tap, for today or a recent day.
+- Reminders at times you choose, plus optional weekly and monthly recaps.
+- A week view and calendar show breathing cycles and completed habits together, with streaks and monthly summaries.
+
+## Apple Watch (new in Birch 3.5)
+
+- Six breathing patterns on your wrist.
+- Sessions from 1 to 5 minutes.
+- Haptic cues for inhale, hold, and exhale.
+- Completed sessions sync to Birch on iPhone and can save Mindful Minutes to Apple Health.
+
+## Privacy
+
+- No account and nothing to sign up for.
+- Privacy policy: https://birch-breathe.vercel.app/privacy
+
+## FAQ
+
+Q: Is Birch free?
+A: Yes. Free on the App Store, with no ads, no subscription, and no in-app purchases.
+
+Q: Do I need an account?
+A: No.
+
+Q: Does Birch work with Apple Health?
+A: Sessions can count toward Mindful Minutes in Apple Health.
+
+Q: Is Birch on Apple Watch?
+A: Yes, on watchOS 11 or later.
+
+## Disclaimer
+
+Birch supports general wellness. It is not a medical device and is not a substitute for professional medical advice.
