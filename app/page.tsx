@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import MoreFeatures from "./components/MoreFeatures";
+import Reveal from "./components/Reveal";
 
 const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
@@ -8,23 +10,26 @@ const PRIVACY =
 const SUPPORT =
   "https://docs.google.com/forms/d/e/1FAIpQLScDG6nD1RzDc5NEO31206FtgrPoTFgAzyPUReW3FoJSfIYDbg/viewform";
 
-const techniques = [
-  ["Weil Method", "4–7–8"],
-  ["Box Breathing", "4–4–4–4"],
-  ["Gentle Wave", "7–11"],
-  ["Balance", "3–3–6–3"],
-  ["Heart Coherence", "6–6"],
-  ["Slow-Paced Breathing", "4–6"],
-];
+const RATING = "4.9";
+const RATING_COUNT = "115";
 
 const habits = [
-  ["💧", "Drink water", "Count it, one tap at a time"],
-  ["💊", "Take vitamins", "Yes/no, with a gentle reminder"],
-  ["📖", "Read", "Log today or a recent day"],
-  ["⏳", "Fast", "Yes/no, on your calendar"],
-  ["🚶", "Walk", "Streaks and monthly summaries"],
-  ["🧘", "Meditate", "Beside your breathing all week"],
-  ["✨", "Custom", "Your own emoji and color"],
+  ["💧", "Drink water", "Count"],
+  ["💊", "Take vitamins", "Yes/no"],
+  ["📖", "Read", "Yes/no"],
+  ["⏳", "Fast", "Yes/no"],
+  ["🚶", "Walk", "Yes/no"],
+  ["🧘", "Meditate", "Yes/no"],
+  ["✨", "Your own", "Any emoji, any color"],
+];
+
+const moments = [
+  { src: "/photos/window.webp", tag: "Morning · 4-7-8", alt: "A woman breathing slowly by a sunlit window" },
+  { src: "/photos/water.webp", tag: "Drink water · 3 of 8", alt: "A woman pouring a glass of water in a bright kitchen" },
+  { src: "/photos/sit.webp", tag: "Midday · Box breathing", alt: "A man sitting on a cushion with his eyes closed" },
+  { src: "/photos/walk.webp", tag: "Walk · Done", alt: "A man walking on a path through a birch forest" },
+  { src: "/photos/journal.webp", tag: "Vitamins · Done", alt: "Hands checking off a paper habit journal beside water and vitamins" },
+  { src: "/photos/bed.webp", tag: "Evening · Gentle Wave 7-11", alt: "A woman resting in bed at dusk" },
 ];
 
 const quotes = [
@@ -70,12 +75,12 @@ const jsonLd = {
   "@type": "MobileApplication",
   name: "Birch: Breathe, Relax & Sleep",
   alternateName: "Birch",
-  operatingSystem: "iOS",
+  operatingSystem: "iOS, watchOS",
   applicationCategory: "HealthApplication",
   url: "https://birch-breathe.vercel.app",
   installUrl: APP,
   description:
-    "Free 4-7-8 and box breathing with simple habit tracking. No subscriptions. No ads. No account.",
+    "Free 4-7-8 and box breathing for iPhone and Apple Watch, with simple habit tracking. No subscriptions. No ads. No account.",
   featureList: [
     "Six guided breathing techniques, including 4-7-8 and box breathing",
     "Yes/no or count-based habits with emoji and color",
@@ -88,14 +93,14 @@ const jsonLd = {
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "115",
+    ratingValue: RATING,
+    ratingCount: RATING_COUNT,
     bestRating: "5",
   },
   author: { "@type": "Organization", name: "Tsukemen.io" },
 };
 
-function Stars({ size = 16 }: { size?: number }) {
+function Stars({ size = 14 }: { size?: number }) {
   return (
     <span className="stars" aria-hidden="true">
       {Array.from({ length: 5 }, (_, i) => (
@@ -110,15 +115,26 @@ function Stars({ size = 16 }: { size?: number }) {
   );
 }
 
-function StoreBadge() {
+function AppleGlyph({ size = 18 }: { size?: number }) {
   return (
-    <a className="store-badge" href={APP} target="_blank" rel="noopener noreferrer">
-      <svg viewBox="0 0 16 20" width="16" height="20" aria-hidden="true">
-        <path
-          fill="currentColor"
-          d="M13.2 10.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-1.9-1.5-.2-3 .9-3.7.9s-2-.9-3.3-.9c-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.3 2.6 1.3 0 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.2 3.2-2.5.9-1.4 1.3-2.8 1.3-2.9-.1 0-2.5-1-2.5-3.8zM11 3.8c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2.1-1.1 3.3 1.2.1 2.3-.6 3-1.6z"
-        />
-      </svg>
+    <svg viewBox="0 0 16 20" width={size * 0.8} height={size} aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M13.2 10.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-1.9-1.5-.2-3 .9-3.7.9s-2-.9-3.3-.9c-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.3 2.6 1.3 0 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.2 3.2-2.5.9-1.4 1.3-2.8 1.3-2.9-.1 0-2.5-1-2.5-3.8zM11 3.8c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2.1-1.1 3.3 1.2.1 2.3-.6 3-1.6z"
+      />
+    </svg>
+  );
+}
+
+function StoreBadge({ light = false }: { light?: boolean }) {
+  return (
+    <a
+      className={light ? "store-badge light" : "store-badge"}
+      href={APP}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <AppleGlyph size={22} />
       <span>
         <small>Download on the</small>
         App Store
@@ -127,33 +143,96 @@ function StoreBadge() {
   );
 }
 
-function ProofPill() {
+function RatingLine({ dark = false }: { dark?: boolean }) {
   return (
-    <p className="proof-pill">
+    <p className={dark ? "rating-line dark" : "rating-line"}>
       <Stars />
       <span>
-        <strong>4.9</strong> from 115 US ratings
+        {RATING} / {RATING_COUNT} ratings · Free
       </span>
     </p>
+  );
+}
+
+function Phone({
+  src,
+  alt,
+  className = "",
+  priority = false,
+  sizes = "320px",
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+  sizes?: string;
+}) {
+  return (
+    <div className={`phone ${className}`}>
+      <span className="island" aria-hidden="true" />
+      <Image src={src} alt={alt} width={800} height={1272} priority={priority} sizes={sizes} />
+    </div>
+  );
+}
+
+function Watch({ className = "" }: { className?: string }) {
+  return (
+    <div className={`watch ${className}`} aria-hidden="true">
+      <span className="watch-band top" />
+      <span className="watch-band bottom" />
+      <span className="watch-crown" />
+      <div className="watch-case">
+        <div className="watch-screen">
+          <span className="watch-time">9:41</span>
+          <span className="watch-orb" />
+          <span className="watch-label">Breathe</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Laurel({ children }: { children: React.ReactNode }) {
+  const leaf = (
+    <svg viewBox="0 0 24 56" width="18" height="44" aria-hidden="true">
+      <g fill="currentColor">
+        <ellipse cx="14" cy="8" rx="3" ry="6" transform="rotate(25 14 8)" />
+        <ellipse cx="10" cy="19" rx="3" ry="6" transform="rotate(15 10 19)" />
+        <ellipse cx="8" cy="31" rx="3" ry="6" transform="rotate(0 8 31)" />
+        <ellipse cx="10" cy="43" rx="3" ry="6" transform="rotate(-25 10 43)" />
+        <path d="M17 2c-9 12-11 30-1 52" fill="none" stroke="currentColor" strokeWidth="1.2" />
+      </g>
+    </svg>
+  );
+  return (
+    <div className="laurel">
+      {leaf}
+      <span>{children}</span>
+      <span className="flip">{leaf}</span>
+    </div>
   );
 }
 
 export default function Home() {
   return (
     <>
-      <header className="site-header">
-        <div className="navpill">
+      <Reveal />
+      <header className="nav-wrap">
+        <nav className="nav" aria-label="Main">
           <Link className="brand" href="/">
-            <Image src="/images/birch-mark.png" alt="" width={28} height={28} />
+            <Image src="/images/birch-mark.png" alt="" width={24} height={24} />
             <span>Birch</span>
           </Link>
-          <nav className="nav-links" aria-label="Page">
+          <div className="nav-links">
             <a href="#breathe">Breathing</a>
             <a href="#habits">Habits</a>
+            <a href="#watch">Watch</a>
             <a href="#faq">FAQ</a>
-          </nav>
-          <StoreBadge />
-        </div>
+          </div>
+          <a className="nav-cta" href={APP} target="_blank" rel="noopener noreferrer">
+            Get Birch
+          </a>
+        </nav>
       </header>
 
       <main>
@@ -161,208 +240,388 @@ export default function Home() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <section className="hero band wash-hero">
-          <div className="hero-inner">
+
+        {/* Hero */}
+        <section className="hero">
+          <div className="hero-frame">
+            <Image
+              className="hero-bg"
+              src="/photos/sky.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+            />
+            <div className="aurora" aria-hidden="true" />
             <div className="hero-copy">
-              <ProofPill />
-              <p className="hero-kicker">4-7-8, Box Breathing &amp; Habits</p>
               <h1>
                 Breathe better.
                 <br />
                 Keep small habits.
               </h1>
-              <p className="lede">
-                Choose a pattern. Follow the visual guide. Log a few daily habits
-                beside your breath. No ads, no account, no subscription.
+              <p className="hero-sub">
+                Free 4-7-8 and box breathing for iPhone and Apple Watch, with a
+                few daily habits beside your breath.
               </p>
-              <div className="cta-row">
-                <a className="cta" href={APP} target="_blank" rel="noopener noreferrer">
-                  Get Birch free
-                </a>
-                <StoreBadge />
-              </div>
+              <StoreBadge />
+              <RatingLine />
             </div>
-            <div className="hero-visual">
-              <div className="shot shot-left">
-                <Image src="/images/birch-ss2.jpg" alt="" width={420} height={908} />
+            <div className="hero-devices">
+              <Phone
+                className="hero-phone"
+                src="/images/screen-breathe.webp"
+                alt="A box breathing session in Birch"
+                priority
+                sizes="(max-width: 880px) 62vw, 330px"
+              />
+              <Watch className="hero-watch" />
+              <div className="chip chip-a">
+                <span className="chip-dot lime" />
+                <span>
+                  <strong>Weil Method</strong>
+                  <small>Inhale 4 · Hold 7 · Exhale 8</small>
+                </span>
               </div>
-              <div className="shot shot-primary">
-                <Image
-                  src="/images/birch-ss1.jpg"
-                  alt="Birch breathing session"
-                  width={480}
-                  height={1038}
-                  priority
-                />
+              <div className="chip chip-b">
+                <span className="chip-emoji" aria-hidden="true">💧</span>
+                <span>
+                  <strong>Drink water</strong>
+                  <small>3 of 8 today</small>
+                </span>
               </div>
-              <div className="shot shot-right">
-                <Image src="/images/birch-ss3.jpg" alt="" width={420} height={908} />
+              <div className="chip chip-c">
+                <span className="chip-emoji" aria-hidden="true">🫁</span>
+                <span>
+                  <strong>Mindful Minutes</strong>
+                  <small>Saved to Apple Health</small>
+                </span>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="band" id="breathe">
-          <div className="band-inner">
-            <header className="band-head">
-              <h2>Six techniques. Follow the visual guide.</h2>
+        {/* Mobile app card */}
+        <div className="app-card-wrap">
+          <a className="app-card" href={APP} target="_blank" rel="noopener noreferrer">
+            <Image src="/images/birch-icon.png" alt="" width={56} height={56} />
+            <span className="app-card-text">
+              <strong>Birch</strong>
+              <span>Breathe, Relax &amp; Sleep</span>
+              <span className="app-card-rating">
+                <Stars size={12} /> {RATING}
+              </span>
+            </span>
+            <span className="app-card-get">Get</span>
+          </a>
+        </div>
+
+        {/* Works with */}
+        <section className="works reveal">
+          <h2>Works with</h2>
+          <ul>
+            <li>
+              <AppleGlyph size={16} /> iPhone
+            </li>
+            <li>
+              <AppleGlyph size={16} /> Watch
+            </li>
+            <li>
+              <span className="heart" aria-hidden="true">♥</span> Apple Health
+            </li>
+          </ul>
+        </section>
+
+        {/* Social proof + moments carousel */}
+        <section className="section proof">
+          <div className="laurels reveal">
+            <Laurel>
+              {RATING} average
+              <br />
+              on the App Store
+            </Laurel>
+            <Laurel>
+              Free.
+              <br />
+              No ads, no account.
+            </Laurel>
+          </div>
+          <h2 className="display reveal">
+            A calm minute,
+            <br />
+            whenever you need one
+          </h2>
+          <div className="moments" tabIndex={0} aria-label="Moments with Birch">
+            {moments.map((m) => (
+              <figure className="moment" key={m.src}>
+                <Image src={m.src} alt={m.alt} width={600} height={800} sizes="260px" />
+                <figcaption>{m.tag}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
+
+        {/* Breathing */}
+        <section className="section" id="breathe">
+          <header className="section-head reveal">
+            <h2 className="display">
+              Start with
+              <br />
+              your breath
+            </h2>
+            <p>
+              Choose a pattern. Set a time or a number of cycles. Follow inhale,
+              hold, and exhale on screen.
+            </p>
+          </header>
+          <div className="trio">
+            <article className="tall-card tint-lime reveal">
+              <div className="tall-copy">
+                <h3>Follow the guide</h3>
+                <p>
+                  A visual guide paces every inhale, hold, and exhale, so you can
+                  stop counting and just breathe.
+                </p>
+              </div>
+              <Phone
+                className="peek"
+                src="/images/screen-breathe.webp"
+                alt="Birch guiding an inhale during box breathing"
+                sizes="(max-width: 880px) 70vw, 280px"
+              />
+            </article>
+            <article className="tall-card tint-blue reveal">
+              <div className="tall-copy">
+                <h3>Six patterns</h3>
+                <p>
+                  Weil Method 4-7-8, box breathing, Gentle Wave, Balance, Heart
+                  Coherence, and slow-paced breathing.
+                </p>
+              </div>
+              <Phone
+                className="peek"
+                src="/images/screen-techniques.webp"
+                alt="The six breathing techniques in Birch"
+                sizes="(max-width: 880px) 70vw, 280px"
+              />
+            </article>
+            <article className="tall-card tint-night reveal">
+              <div className="tall-copy">
+                <h3>Wind down at night</h3>
+                <p>
+                  Slow down before sleep, reset during a busy day, or take a
+                  quiet minute for yourself.
+                </p>
+              </div>
+              <div className="tall-photo">
+                <Image
+                  src="/photos/night.webp"
+                  alt="A nightstand with a warm lamp and a cup of tea"
+                  width={864}
+                  height={1152}
+                  sizes="(max-width: 880px) 90vw, 360px"
+                />
+              </div>
+            </article>
+          </div>
+        </section>
+
+        {/* Habits */}
+        <section className="section" id="habits">
+          <header className="section-head reveal">
+            <h2 className="display">
+              Keep small habits
+              <br />
+              beside it
+            </h2>
+            <p>
+              Log today or a recent day in one tap. Yes/no or a count, with
+              emoji, color, and gentle reminders.
+            </p>
+          </header>
+          <article className="wide-card tint-sage reveal">
+            <div className="wide-copy">
+              <h3>One tap a day</h3>
               <p>
-                Start with 4-7-8 or box breathing. Set a time or a number of
-                cycles, then follow inhale, hold, and exhale. Use it to slow
-                down before sleep, reset during a stressful day, or take a
-                quiet minute for yourself.
+                Drink water, take vitamins, read, fast, walk, meditate, or make
+                your own. Birch keeps them next to your breathing, not in another
+                app.
               </p>
-            </header>
-            <div className="tech-grid">
-              {techniques.map(([name, ratio], i) => (
-                <article className={i === 0 ? "tile featured" : "tile"} key={name}>
-                  <span className="ratio">{ratio}</span>
-                  <strong>{name}</strong>
-                </article>
-              ))}
             </div>
-            <figure className="phone-stage">
-              <div className="poster poster-blue">
-                <Image
-                  src="/images/birch-ss2.jpg"
-                  alt="Six breathing techniques in Birch"
-                  width={620}
-                  height={1340}
-                />
+            <div className="wide-visual habits-visual">
+              <ul className="habit-list">
+                {habits.map(([emoji, name, kind]) => (
+                  <li key={name}>
+                    <span className="habit-emoji" aria-hidden="true">
+                      {emoji}
+                    </span>
+                    <span className="habit-name">{name}</span>
+                    <span className="habit-kind">{kind}</span>
+                  </li>
+                ))}
+              </ul>
+              <Phone
+                className="habit-phone"
+                src="/images/screen-habits.webp"
+                alt="Today's habits in Birch: daily walk, meditate, cold plunge, vitamins"
+                sizes="(max-width: 880px) 60vw, 260px"
+              />
+            </div>
+          </article>
+          <article className="wide-card tint-blush reverse reveal">
+            <div className="wide-visual photo-visual">
+              <Image
+                src="/photos/journal.webp"
+                alt="Hands checking off habits in a paper journal beside water and vitamins"
+                width={1152}
+                height={864}
+                sizes="(max-width: 880px) 92vw, 560px"
+              />
+              <div className="float-chip fc-1">
+                <span aria-hidden="true">🔥</span> 12-day streak
               </div>
-            </figure>
-          </div>
-        </section>
-
-        <section className="band wash-lime" id="habits">
-          <div className="band-inner">
-            <header className="band-head">
-              <h2>Keep small daily habits beside your breath.</h2>
+              <div className="float-chip fc-2">
+                <span aria-hidden="true">🔔</span> Vitamins · 8:00 AM
+              </div>
+              <div className="float-chip fc-3">
+                <span aria-hidden="true">📅</span> October · 24 of 31 days
+              </div>
+            </div>
+            <div className="wide-copy">
+              <h3>Progress without pressure</h3>
               <p>
-                Log today or a recent day in one tap. Yes/no or a count, with
-                emoji, color, and gentle reminders. See breathing and habits
-                together across your week and month — cycles, streaks, and
-                monthly summaries at a glance, without turning it into another
-                chore.
+                Gentle reminders at times you choose. Streaks and monthly
+                summaries, with breathing and habits together across your week
+                and month. Missed a day? Fill it in.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        {/* Apple Watch — dark band */}
+        <section className="dark-band" id="watch">
+          <div className="dark-inner">
+            <header className="section-head on-dark reveal">
+              <span className="new-pill">New in Birch 3.5</span>
+              <h2 className="display">
+                Now on
+                <br />
+                Apple Watch
+              </h2>
+              <p>
+                Take a breathing break right from your wrist. Gentle haptic cues
+                pace each breath, so you can keep your eyes closed.
               </p>
             </header>
-            <div className="habit-grid">
-              {habits.map(([emoji, name, detail]) => (
-                <article className="tile habit" key={name}>
-                  <span className="habit-emoji" aria-hidden="true">
-                    {emoji}
-                  </span>
-                  <strong>{name}</strong>
-                  <span>{detail}</span>
-                </article>
-              ))}
-            </div>
-            <figure className="phone-stage">
-              <div className="poster">
-                <Image
-                  src="/images/birch-ss3.jpg"
-                  alt="Habits beside breathing in Birch"
-                  width={620}
-                  height={1340}
-                />
+            <article className="watch-hero reveal">
+              <Image
+                src="/photos/wrist.webp"
+                alt="A wrist with a smartwatch resting on a knee in a misty birch forest"
+                fill
+                sizes="(max-width: 880px) 100vw, 1180px"
+              />
+              <div className="watch-hero-copy">
+                <h3>A breath on your wrist</h3>
+                <p>Six patterns, from 1 to 5 minutes, wherever you are.</p>
               </div>
-            </figure>
-          </div>
-        </section>
-
-        <section className="band" id="why">
-          <div className="band-inner">
-            <header className="band-head">
-              <h2>Why Birch</h2>
-              <p>Free, private, and quiet on purpose.</p>
-            </header>
-            <div className="why-grid">
-              <article className="card">
-                <h3>Free. Forever.</h3>
-                <p>No ads, no paywall, no subscription. Breathing and habits are both included.</p>
+            </article>
+            <div className="watch-grid">
+              <article className="glow-card glow-lime reveal">
+                <Watch className="card-watch" />
+                <h3>Feel the rhythm</h3>
+                <p>Gentle haptic cues for inhale, hold, and exhale.</p>
               </article>
-              <article className="card">
-                <h3>No account.</h3>
-                <p>Nothing to sign up for. Open Birch, start a session, or log a habit.</p>
+              <article className="glow-card glow-blue reveal">
+                <div className="sync" aria-hidden="true">
+                  <span>⌚︎</span>
+                  <i />
+                  <span>📱</span>
+                  <i />
+                  <span className="heart">♥</span>
+                </div>
+                <h3>Syncs to your iPhone</h3>
+                <p>
+                  Completed sessions sync to Birch on iPhone and can save Mindful
+                  Minutes to Apple Health.
+                </p>
               </article>
-              <article className="card">
-                <h3>Private by design.</h3>
-                <p>No feed to scroll, nothing to keep up with. Just today’s breath and habits.</p>
-              </article>
-              <article className="card">
-                <h3>Apple Health.</h3>
-                <p>Sessions can count toward Mindful Minutes in Apple Health.</p>
+              <article className="glow-card glow-blush reveal">
+                <div className="durations" aria-hidden="true">
+                  {[1, 2, 3, 4, 5].map((m) => (
+                    <span key={m} className={m === 3 ? "on" : ""}>
+                      {m}m
+                    </span>
+                  ))}
+                </div>
+                <h3>1 to 5 minutes</h3>
+                <p>Short enough for a meeting break. Requires watchOS 11 or later.</p>
               </article>
             </div>
           </div>
         </section>
 
-        <section className="band wash-blue" id="screens">
-          <div className="band-inner">
-            <header className="band-head">
-              <h2>Breathing and habits, without the clutter.</h2>
-              <p>The same screens from Birch, with a little more room to look.</p>
-            </header>
-            <div className="gallery">
-              <figure>
-                <div className="poster">
-                  <Image
-                    src="/images/birch-ss1.jpg"
-                    alt="A Birch breathing session"
-                    width={620}
-                    height={1340}
-                  />
-                </div>
-                <figcaption>
-                  <h3>Follow the visual guide.</h3>
-                  <p>Choose a pattern, set a time or cycles, and follow along.</p>
-                </figcaption>
-              </figure>
-              <figure>
-                <div className="poster poster-blue">
-                  <Image
-                    src="/images/birch-ss2.jpg"
-                    alt="Breathing techniques in Birch"
-                    width={620}
-                    height={1340}
-                  />
-                </div>
-                <figcaption>
-                  <h3>Six techniques.</h3>
-                  <p>4-7-8, box breathing, and four more. Switch anytime.</p>
-                </figcaption>
-              </figure>
-              <figure>
-                <div className="poster">
-                  <Image
-                    src="/images/birch-ss3.jpg"
-                    alt="Habit tracking in Birch"
-                    width={620}
-                    height={1340}
-                  />
-                </div>
-                <figcaption>
-                  <h3>Habits beside breathing.</h3>
-                  <p>
-                    Water, vitamins, read, fast, walk, meditate, or your own.
-                    Progress without pressure.
-                  </p>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
+        {/* And there's more */}
+        <section className="section" id="more">
+          <header className="section-head left reveal">
+            <h2 className="display">And there&rsquo;s more</h2>
+            <p>Small, quiet details that make Birch easy to come back to.</p>
+          </header>
+          <MoreFeatures />
         </section>
 
-        <section className="band" id="reviews">
-          <div className="band-inner">
-            <header className="band-head">
-              <h2>What people actually wrote.</h2>
-              <p>Real US App Store reviews. Nothing invented.</p>
-            </header>
-            <div className="quote-grid">
-              {quotes.map((quote) => (
-                <blockquote key={quote}>
-                  <p>“{quote}”</p>
+        {/* Privacy */}
+        <section className="section tight" id="why">
+          <article className="privacy reveal">
+            <Image
+              className="privacy-mark"
+              src="/images/birch-mark.png"
+              alt=""
+              width={371}
+              height={371}
+            />
+            <div className="privacy-copy">
+              <h2 className="display">Free, private, quiet</h2>
+              <p>
+                No ads, no paywall, no subscription, no account. Breathing and
+                habits are both included. Nothing to sign up for, and no feed to
+                keep up with.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        {/* Reviews */}
+        <section className="section reviews" id="reviews">
+          <div className="mosaic" aria-hidden="true">
+            {[
+              "/photos/sit.webp",
+              "/photos/water.webp",
+              "/photos/window.webp",
+              "/photos/walk.webp",
+              "/photos/bed.webp",
+              "/photos/journal.webp",
+            ].map((src, i) => (
+              <div className={`tile t${i}`} key={src}>
+                <Image src={src} alt="" width={300} height={400} sizes="160px" />
+              </div>
+            ))}
+          </div>
+          <header className="section-head reveal">
+            <h2 className="display">
+              Made with care.
+              <br />
+              Kept simple.
+            </h2>
+            <p>
+              {RATING} stars from {RATING_COUNT} US App Store ratings. These are
+              real reviews, word for word.
+            </p>
+          </header>
+          <div className="marquee" aria-label="App Store reviews">
+            <div className="marquee-track">
+              {[...quotes, ...quotes, ...quotes].map((q, i) => (
+                <blockquote className="review" key={i} aria-hidden={i >= quotes.length}>
+                  <Stars size={16} />
+                  <p>&ldquo;{q}&rdquo;</p>
                   <cite>US App Store review</cite>
                 </blockquote>
               ))}
@@ -370,64 +629,87 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="band wash-lime" id="faq">
-          <div className="band-inner narrow">
-            <header className="band-head">
-              <h2>Frequently asked questions</h2>
-              <p>The short version.</p>
-            </header>
-            <div className="faq-list">
-              {faqs.map(([q, a]) => (
-                <details key={q}>
-                  <summary>{q}</summary>
-                  <p>{a}</p>
-                </details>
-              ))}
-            </div>
+        {/* FAQ */}
+        <section className="section" id="faq">
+          <header className="section-head reveal">
+            <h2 className="display">Questions</h2>
+            <p>The short version.</p>
+          </header>
+          <div className="faq-list reveal">
+            {faqs.map(([q, a]) => (
+              <details key={q}>
+                <summary>{q}</summary>
+                <p>{a}</p>
+              </details>
+            ))}
           </div>
         </section>
 
-        <section className="band wash-hero close">
-          <div className="band-inner narrow close-inner">
-            <Stars size={36} />
-            <h2>Take one calm breath. Then build from there.</h2>
+        {/* Final CTA */}
+        <section className="final">
+          <header className="section-head reveal">
+            <h2 className="display">Ready when you are</h2>
             <p>
-              Free breathing and habits on the App Store. No ads, no account, no
-              subscription. 4.9 from 115 US ratings.
+              Take one calm breath, then build from there. Free on the App
+              Store. No ads, no account, no subscription.
             </p>
-            <div className="cta-row">
-              <a className="cta" href={APP} target="_blank" rel="noopener noreferrer">
-                Get Birch free
-              </a>
-              <StoreBadge />
-            </div>
-            <p className="fineprint">
-              Birch supports general wellness and is not a substitute for
-              professional medical advice.
-            </p>
+            <StoreBadge />
+          </header>
+          <div className="flatlay">
+            <Image
+              src="/photos/flatlay.webp"
+              alt="Tea, an eye mask, a water bottle, a notebook, and a smartwatch laid out on a table"
+              width={1280}
+              height={720}
+              sizes="100vw"
+            />
           </div>
+          <p className="fineprint">
+            Birch supports general wellness and is not a substitute for
+            professional medical advice.
+          </p>
         </section>
       </main>
 
-      <footer>
-        <div className="wide wrap">
+      <a className="qr-card" href={APP} target="_blank" rel="noopener noreferrer">
+        <Image src="/images/appstore-qr.svg" alt="" width={64} height={64} unoptimized />
+        <span>
+          <strong>Get Birch for iOS</strong>
+          <small>Scan to open the App Store. Free.</small>
+        </span>
+      </a>
+
+      <footer className="footer">
+        <div className="footer-inner">
           <div className="foot-brand">
-            <strong>Birch</strong>
-            <span>Breathing and small habits.</span>
-            <StoreBadge />
+            <Link className="brand" href="/">
+              <Image src="/images/birch-mark.png" alt="" width={22} height={22} />
+              <span>Birch</span>
+            </Link>
+            <span>© 2026 Tsukemen.io</span>
           </div>
-          <div className="links">
+          <div className="foot-col">
+            <h2>App</h2>
+            <a href={APP} target="_blank" rel="noopener noreferrer">
+              Download
+            </a>
+            <a href="#breathe">Breathing</a>
+            <a href="#habits">Habits</a>
+            <a href="#watch">Apple Watch</a>
+          </div>
+          <div className="foot-col">
+            <h2>Help</h2>
+            <a href="#faq">FAQ</a>
             <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
               Support
             </a>
+          </div>
+          <div className="foot-col">
+            <h2>Legal</h2>
             <a href={PRIVACY} target="_blank" rel="noopener noreferrer">
-              Privacy
-            </a>
-            <a href={APP} target="_blank" rel="noopener noreferrer">
-              App Store
+              Privacy Policy
             </a>
           </div>
-          <span className="foot-note">© 2026 Tsukemen.io</span>
         </div>
       </footer>
     </>

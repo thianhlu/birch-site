@@ -10,10 +10,10 @@ const sans = Plus_Jakarta_Sans({
 
 const title = "Birch: Breathe, Relax & Sleep";
 const description =
-  "Free 4-7-8 and box breathing for iPhone. Keep small daily habits beside your breath. No ads, no account, no subscription.";
+  "Free 4-7-8 and box breathing for iPhone and Apple Watch. Keep small daily habits beside your breath. No ads, no account, no subscription.";
 
 export const viewport: Viewport = {
-  themeColor: "#e7e3d8",
+  themeColor: "#f3f1ea",
 };
 
 export const metadata: Metadata = {
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     "relax",
     "sleep",
     "Apple Health",
+    "Apple Watch",
     "free",
   ],
   alternates: {
