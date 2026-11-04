@@ -10,6 +10,7 @@ export type GuideVisual = {
   watch: "breathing" | "patterns" | "start";
   quote: string;
   chips: [string, string];
+  dock?: "start"; // pacer card sits left on wide screens to keep the subject's face clear
 };
 
 const V: Record<string, GuideVisual> = {
@@ -42,6 +43,7 @@ const V: Record<string, GuideVisual> = {
     watch: "breathing",
     quote: "The long, unhurried out-breath is the core of it.",
     chips: ["In 7 · Out 11", "No holds"],
+    dock: "start",
   },
   "coherent-breathing": {
     photo: "/photos/guides/coherent-breathing.webp",

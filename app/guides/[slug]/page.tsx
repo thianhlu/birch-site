@@ -89,7 +89,7 @@ export default async function GuidePage({ params }: Props) {
                 By Birch · Updated <time dateTime={g.updated}>{fmtDate(g.updated)}</time>
               </p>
             </header>
-            <aside className="ghero-visual" aria-label="Try it now">
+            <aside className={`ghero-visual${v.dock === "start" ? " dock-start" : ""}`} aria-label="Try it now">
               <Image
                 className="ghero-photo"
                 src={v.photo}
