@@ -71,7 +71,7 @@ export default async function GuidePage({ params }: Props) {
             <h1><NoBreak text={g.h1} /></h1>
             <div className="answer" role="note" aria-label="Quick answer">
               <span className="answer-tag">Quick answer</span>
-              <p>{g.answer}</p>
+              <p><NoBreak text={g.answer} /></p>
             </div>
             <p className="byline">
               By Birch · Updated <time dateTime={g.updated}>{fmtDate(g.updated)}</time>
