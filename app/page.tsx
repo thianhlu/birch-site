@@ -65,6 +65,10 @@ const faqs = [
     "Can Birch remind me about my habits?",
     "Yes. Set gentle reminders at times you choose. Missed one? Log today or update a recent day, then see breathing cycles, completed habits, streaks, and monthly summaries together. Progress without pressure.",
   ],
+  [
+    "How do I get help or report a bug?",
+    "Use the support form at hellobirch.app/support. Tell us what happened, plus your device and Birch version if you can. Every message gets read.",
+  ],
 ];
 
 const jsonLd = {

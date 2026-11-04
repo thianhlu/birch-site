@@ -1,60 +1,82 @@
+import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+import { SiteFooter, SiteNav } from "../components/Chrome";
+import { CONTACT_EMAIL } from "../components/PageChrome";
+import SupportForm from "./SupportForm";
 
-const APP =
-  "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
-const PRIVACY =
-  "https://docs.google.com/document/d/1lAYHHEQAuaKjcjjFguUm-VnnO9p8V4lCfYc6BOHUVH4/edit?usp=sharing";
-const SUPPORT =
-  "https://docs.google.com/forms/d/e/1FAIpQLScDG6nD1RzDc5NEO31206FtgrPoTFgAzyPUReW3FoJSfIYDbg/viewform";
+export const metadata: Metadata = {
+  title: "Support | Birch",
+  description:
+    "Get help with Birch, report a bug, or suggest a feature. We read every message.",
+  alternates: { canonical: "https://hellobirch.app/support" },
+  openGraph: {
+    title: "Birch Support",
+    description: "Get help with Birch, report a bug, or suggest a feature.",
+    url: "https://hellobirch.app/support",
+  },
+};
 
 export default function Support() {
   return (
     <>
-      <header>
-        <div className="navpill">
-          <Link className="brand" href="/">
-            <Image src="/images/birch-icon.png" alt="" width={36} height={36} />
-            <span>Birch</span>
-          </Link>
-          <a className="nav-app" href={APP} target="_blank" rel="noopener noreferrer">
-            Get Birch
-          </a>
+      <SiteNav />
+      <main className="page">
+        <header className="page-head">
+          <span className="page-kicker">Support</span>
+          <h1>How can we help?</h1>
+          <p className="page-lede">
+            Found a bug, have an idea, or stuck on something? Send a note.
+            Birch is made by one person, and every message gets read.
+          </p>
+        </header>
+
+        <div className="support-grid">
+          <section className="support-card" aria-label="Contact form">
+            <SupportForm contactEmail={CONTACT_EMAIL} />
+          </section>
+
+          <aside className="support-side">
+            <div className="support-card">
+              <h2>Quick answers</h2>
+              <ul>
+                <li>
+                  <strong>Mindful Minutes not showing?</strong> Check Health
+                  access in Settings › Privacy &amp; Security › Health › Birch.
+                </li>
+                <li>
+                  <strong>Reminders not arriving?</strong> Make sure
+                  notifications are on for Birch in Settings › Notifications.
+                </li>
+                <li>
+                  <strong>Watch sessions missing?</strong> Keep your Watch
+                  near your iPhone, then open Birch on both to let them sync.
+                </li>
+              </ul>
+              <p style={{ marginTop: 12 }}>
+                More in the <Link href="/#faq">FAQ</Link>.
+              </p>
+            </div>
+            <div className="support-card">
+              <h2>Bug reports</h2>
+              <p>
+                Telling us your device, iOS or watchOS version, and Birch
+                version helps us find bugs faster. Steps to reproduce help
+                even more.
+              </p>
+            </div>
+            <div className="support-card">
+              <h2>Prefer email?</h2>
+              <p>
+                Write to{" "}
+                <a href={`mailto:${CONTACT_EMAIL}?subject=Birch%20support`}>{CONTACT_EMAIL}</a>
+                . For privacy questions, see the{" "}
+                <Link href="/privacy">privacy policy</Link>.
+              </p>
+            </div>
+          </aside>
         </div>
-      </header>
-      <main className="doc wrap">
-        <h1>Support</h1>
-        <p className="intro">
-          Need help with Birch?{" "}
-          <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
-            Open the support form
-          </a>
-          .
-        </p>
-        <Link className="back" href="/">
-          Back to home
-        </Link>
       </main>
-      <footer>
-        <div className="wide wrap">
-          <div className="foot-brand">
-            <strong>Birch</strong>
-            <span>Breathe, relax, sleep.</span>
-          </div>
-          <div className="links">
-            <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
-              Support
-            </a>
-            <a href={PRIVACY} target="_blank" rel="noopener noreferrer">
-              Privacy
-            </a>
-            <a href={APP} target="_blank" rel="noopener noreferrer">
-              App Store
-            </a>
-          </div>
-          <span className="foot-note">© 2026 Tsukemen.io</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }

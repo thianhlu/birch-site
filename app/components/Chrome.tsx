@@ -5,10 +5,8 @@ import { SITE } from "../site";
 export { SITE };
 export const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
-export const PRIVACY =
-  "https://docs.google.com/document/d/1lAYHHEQAuaKjcjjFguUm-VnnO9p8V4lCfYc6BOHUVH4/edit?usp=sharing";
-export const SUPPORT =
-  "https://docs.google.com/forms/d/e/1FAIpQLScDG6nD1RzDc5NEO31206FtgrPoTFgAzyPUReW3FoJSfIYDbg/viewform";
+export const PRIVACY = "/privacy";
+export const SUPPORT = "/support";
 
 export function AppleGlyph({ size = 18 }: { size?: number }) {
   return (
@@ -54,6 +52,7 @@ export function SiteNav({ home = false }: { home?: boolean }) {
           <a href={`${base}#watch`}>Watch</a>
           <Link href="/guides">Guides</Link>
           <a href={`${base}#faq`}>FAQ</a>
+          <Link href={SUPPORT}>Support</Link>
         </div>
         <Link className="nav-guides-m" href="/guides">
           Guides
@@ -97,15 +96,11 @@ export function SiteFooter({ home = false }: { home?: boolean }) {
         <div className="foot-col">
           <h2>Help</h2>
           <a href={`${base}#faq`}>FAQ</a>
-          <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
-            Support
-          </a>
+          <Link href={SUPPORT}>Support</Link>
         </div>
         <div className="foot-col">
           <h2>Legal</h2>
-          <a href={PRIVACY} target="_blank" rel="noopener noreferrer">
-            Privacy Policy
-          </a>
+          <Link href={PRIVACY}>Privacy Policy</Link>
         </div>
       </div>
     </footer>

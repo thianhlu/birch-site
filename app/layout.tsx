@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title,
   description,
   applicationName: "Birch",
-  authors: [{ name: "Thianh Lu" }],
+  authors: [{ name: "Tsukemen.io" }],
   keywords: [
     "breathing app",
     "4-7-8 breathing",
