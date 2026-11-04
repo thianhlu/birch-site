@@ -1,32 +1,27 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 import { LIMITS, TOPICS, type Topic } from "../../support/topics";
 
 /*
  * POST /api/support
  *
- * Takes a support form submission, then:
- *   1. opens an issue (label "support") on the app repo, if SUPPORT_GITHUB_TOKEN is set
- *   2. emails it to SUPPORT_EMAIL_TO over SMTP (reply-to = submitter), if SMTP_* is set
+ * Takes a support form submission and emails it to SUPPORT_EMAIL_TO through
+ * AgentMail, sent from the Birch Support inbox, with reply-to set to the
+ * submitter so a plain "Reply" answers them.
  *
- * If neither delivery works (for example, secrets aren't configured), the full
- * submission is written to the server log so it isn't lost, and the visitor
- * gets a friendly message with a fallback email address.
+ * If the email can't be sent (for example, env vars aren't configured), the
+ * full submission is written to the server log so it isn't lost, and the
+ * visitor gets a friendly message with a fallback email address.
  *
- * Env (all optional; each channel switches on when its vars are present):
- *   SUPPORT_GITHUB_TOKEN  fine-grained token, Issues: read & write, app repo only
- *   SUPPORT_GITHUB_REPO   owner/name, defaults to thianhlu/breath
- *   SMTP_USER, SMTP_PASS  e.g. a Gmail address + a Google App Password
- *   SMTP_HOST, SMTP_PORT  default smtp.gmail.com / 465
- *   SUPPORT_EMAIL_TO      where notifications go
- *   SUPPORT_EMAIL_FROM    optional From address, defaults to SMTP_USER
+ * Env (set in Vercel, never committed):
+ *   AGENTMAIL_API_KEY    AgentMail API key (Bearer)
+ *   AGENTMAIL_INBOX_ID   inbox to send from, e.g. hellobirch@agentmail.to
+ *   SUPPORT_EMAIL_TO     where support messages are delivered
  */
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const GITHUB_API = process.env.SUPPORT_GITHUB_API || "https://api.github.com";
-const LABEL = "support";
+const AGENTMAIL_API = "https://api.agentmail.to/v0";
 const MIN_FILL_MS = 3_000;
 const MAX_FILL_MS = 24 * 60 * 60 * 1000;
 const RATE_WINDOW_MS = 15 * 60 * 1000;
@@ -90,118 +85,38 @@ function validate(body: Record<string, unknown>): Submission | Fail {
 
 const topicLabel = (t: Topic) => TOPICS.find((x) => x.value === t)?.label ?? "Other";
 
-function snippet(message: string, n = 60) {
-  const s = oneLine(message);
-  return s.length > n ? `${s.slice(0, n - 1).trimEnd()}…` : s;
-}
-
-function fence(text: string) {
-  const longest = Math.max(2, ...(text.match(/`+/g) ?? []).map((m) => m.length));
-  const f = "`".repeat(longest + 1);
-  return `${f}text\n${text}\n${f}`;
-}
-
-async function gh(path: string, token: string, init?: RequestInit) {
-  return fetch(`${GITHUB_API}${path}`, {
-    ...init,
-    headers: {
-      Accept: "application/vnd.github+json",
-      Authorization: `Bearer ${token}`,
-      "X-GitHub-Api-Version": "2022-11-28",
-      "User-Agent": "birch-support-form",
-      ...(init?.body ? { "Content-Type": "application/json" } : {}),
-    },
-    signal: AbortSignal.timeout(10_000),
-  });
-}
-
-async function ensureLabel(repo: string, token: string) {
-  const res = await gh(`/repos/${repo}/labels/${LABEL}`, token);
-  if (res.status !== 404) return;
-  await gh(`/repos/${repo}/labels`, token, {
-    method: "POST",
-    body: JSON.stringify({
-      name: LABEL,
-      color: "49d27a",
-      description: "Sent from the support form on hellobirch.app",
-    }),
-  });
-}
-
-async function createIssue(s: Submission, when: string): Promise<string | null> {
-  const token = process.env.SUPPORT_GITHUB_TOKEN;
-  if (!token) return null;
-  const repo = process.env.SUPPORT_GITHUB_REPO || "thianhlu/breath";
-
-  await ensureLabel(repo, token).catch(() => {});
-
-  const body = [
-    `**Topic:** ${topicLabel(s.topic)}`,
-    `**From:** ${s.name || "(no name)"} <${s.email}>`,
-    `**Device / OS:** ${s.device || "(not given)"}`,
-    `**App version:** ${s.appVersion || "(not given)"}`,
-    `**Received:** ${when}`,
-    "",
-    "**Message**",
-    "",
-    fence(s.message),
-    "",
-    "<sub>Sent from hellobirch.app/support. Reply to the submitter by email, not on this issue.</sub>",
-  ].join("\n");
-
-  const payload = {
-    title: `[Support] ${topicLabel(s.topic)}: ${snippet(s.message)}`,
-    body,
-    labels: [LABEL],
-  };
-  let res = await gh(`/repos/${repo}/issues`, token, { method: "POST", body: JSON.stringify(payload) });
-  if (res.status === 422) {
-    // Label problems shouldn't lose the report; retry without labels.
-    res = await gh(`/repos/${repo}/issues`, token, {
-      method: "POST",
-      body: JSON.stringify({ ...payload, labels: undefined }),
-    });
-  }
-  if (!res.ok) throw new Error(`GitHub ${res.status}: ${(await res.text()).slice(0, 300)}`);
-  const issue = (await res.json()) as { html_url: string };
-  return issue.html_url;
-}
-
-async function sendEmail(s: Submission, when: string, issueUrl: string | null): Promise<boolean> {
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
+async function sendEmail(s: Submission, when: string): Promise<boolean> {
+  const key = process.env.AGENTMAIL_API_KEY;
+  const inbox = process.env.AGENTMAIL_INBOX_ID;
   const to = process.env.SUPPORT_EMAIL_TO;
-  if (!user || !pass || !to) return false;
-  const port = Number(process.env.SMTP_PORT || 465);
-  const transport = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || "smtp.gmail.com",
-    port,
-    secure: port === 465,
-    auth: { user, pass },
-    connectionTimeout: 10_000,
-    greetingTimeout: 10_000,
-    socketTimeout: 15_000,
-  });
+  if (!key || !inbox || !to) return false;
+
   const text = [
-    `Topic: ${topicLabel(s.topic)}`,
-    `From: ${s.name || "(no name)"} <${s.email}>`,
-    `Device / OS: ${s.device || "(not given)"}`,
-    `App version: ${s.appVersion || "(not given)"}`,
-    `Received: ${when}`,
-    issueUrl ? `GitHub issue: ${issueUrl}` : "GitHub issue: (not created)",
-    "",
     s.message,
     "",
     "--",
+    `Topic: ${topicLabel(s.topic)}`,
+    `From: ${s.name ? `${s.name} <${s.email}>` : s.email}`,
+    `Device / OS: ${s.device || "(not given)"}`,
+    `App version: ${s.appVersion || "(not given)"}`,
+    `Received: ${when}`,
+    "",
     "Sent from hellobirch.app/support. Reply to this email to answer the sender.",
   ].join("\n");
-  await transport.sendMail({
-    from: { name: "Birch Support Form", address: process.env.SUPPORT_EMAIL_FROM || user },
-    to,
-    replyTo: s.name ? { name: s.name, address: s.email } : s.email,
-    subject: `[Birch support] ${topicLabel(s.topic)}: ${snippet(s.message, 50)}`,
-    text,
+
+  const res = await fetch(`${AGENTMAIL_API}/inboxes/${encodeURIComponent(inbox)}/messages/send`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    body: JSON.stringify({
+      to: [to],
+      reply_to: [s.email],
+      subject: `Birch support: ${topicLabel(s.topic)}`,
+      text,
+      labels: ["support-form"],
+    }),
+    signal: AbortSignal.timeout(15_000),
   });
+  if (!res.ok) throw new Error(`AgentMail ${res.status}: ${(await res.text()).slice(0, 300)}`);
   return true;
 }
 
@@ -256,31 +171,19 @@ export async function POST(req: Request) {
   const when = new Date().toISOString();
   const ref = `sup_${Date.now().toString(36)}`;
 
-  let issueUrl: string | null = null;
-  let emailed = false;
-  const problems: string[] = [];
-
   try {
-    issueUrl = await createIssue(s, when);
-    if (!issueUrl) problems.push("github: SUPPORT_GITHUB_TOKEN not set");
+    if (await sendEmail(s, when)) {
+      console.info(`[support] ${ref} delivered`);
+      return NextResponse.json({ ok: true });
+    }
+    console.error(`[support] ${ref} NOT delivered: AGENTMAIL_API_KEY / AGENTMAIL_INBOX_ID / SUPPORT_EMAIL_TO not set`, {
+      submission: { ...s, receivedAt: when },
+    });
   } catch (e) {
-    problems.push(`github: ${(e as Error).message}`);
-  }
-  try {
-    emailed = await sendEmail(s, when, issueUrl);
-    if (!emailed) problems.push("email: SMTP_USER / SMTP_PASS / SUPPORT_EMAIL_TO not set");
-  } catch (e) {
-    problems.push(`email: ${(e as Error).message}`);
+    // Nothing went out. Keep the whole submission in the server log so it can be recovered.
+    console.error(`[support] ${ref} NOT delivered: ${(e as Error).message}`, { submission: { ...s, receivedAt: when } });
   }
 
-  if (issueUrl || emailed) {
-    if (problems.length) console.warn(`[support] ${ref} partially delivered`, { issueUrl, emailed, problems });
-    else console.info(`[support] ${ref} delivered`, { issueUrl });
-    return NextResponse.json({ ok: true });
-  }
-
-  // Nothing went out. Keep the whole submission in the server log so it can be recovered.
-  console.error(`[support] ${ref} NOT delivered`, { problems, submission: { ...s, receivedAt: when } });
   return NextResponse.json<Fail>(
     {
       ok: false,

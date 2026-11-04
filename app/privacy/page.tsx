@@ -104,8 +104,7 @@ export default function Privacy() {
               <h2>Who we are</h2>
               <p>
                 Birch: Breathe, Relax &amp; Sleep (&ldquo;Birch&rdquo;) is made
-                by Thianh Lu, publishing as Tsukemen.io (&ldquo;we&rdquo;,
-                &ldquo;us&rdquo;). This policy covers the Birch app for iPhone,
+                by Tsukemen.io (&ldquo;we&rdquo;, &ldquo;us&rdquo;). This policy covers the Birch app for iPhone,
                 iPad, and Apple Watch, and this website, hellobirch.app. Where
                 a law such as the GDPR applies, we are the party responsible
                 for the personal data described here.
@@ -122,11 +121,6 @@ export default function Privacy() {
                 can&apos;t see it.
               </p>
               <ul>
-                <li>
-                  <strong>Apple Watch.</strong> Sessions you finish on Apple
-                  Watch are sent to Birch on your paired iPhone using
-                  Apple&apos;s device-to-device connection.
-                </li>
                 <li>
                   <strong>Reminders.</strong> Habit reminders and progress
                   summaries are scheduled on your device as local
@@ -168,13 +162,17 @@ export default function Privacy() {
                 provider. These events are tied to a random identifier that the
                 app creates. They aren&apos;t linked to your name, email, Apple
                 ID, or any account, and we don&apos;t build profiles of
-                individual people.
+                individual people. The Apple Watch app sends its own anonymous
+                usage events directly to PostHog, the same kinds of events as
+                the iPhone app.
               </p>
               <h3>What an event can include</h3>
               <ul>
                 <li>
                   App activity: the app was installed, updated, opened, or
-                  closed, and which screens were viewed.
+                  closed, which screens were viewed, and whether you finished
+                  the onboarding tour. When the app opens, it also loads its
+                  feature settings.
                 </li>
                 <li>
                   Breathing: a session started, finished, or ended early, with
@@ -182,7 +180,8 @@ export default function Privacy() {
                 </li>
                 <li>
                   Habits: a habit was created or logged, with its type (yes/no
-                  or count) and target. Not the habit&apos;s name.
+                  or count) and target, and for count habits, the number you
+                  logged. Not the habit&apos;s name.
                 </li>
                 <li>
                   Device basics: device model, operating system and version,
@@ -191,10 +190,12 @@ export default function Privacy() {
                 </li>
                 <li>
                   Approximate location: like most internet services, PostHog
-                  receives your device&apos;s IP address and uses it to estimate
-                  a rough location, such as city and country. We use this only
-                  for aggregate counts, such as how many people use Birch in
-                  each country.
+                  receives your device&apos;s IP address. It uses the address
+                  only to estimate an approximate location (country, region,
+                  and city) and then discards it. We don&apos;t store IP
+                  addresses, precise coordinates, or postal codes. We use
+                  approximate location only for aggregate counts, such as how
+                  many people use Birch in each country.
                 </li>
               </ul>
               <p>
@@ -214,11 +215,11 @@ export default function Privacy() {
                 plan features you ask about.
               </p>
               <p>
-                Support form messages are sent to our email inbox and saved as
-                an issue in our private GitHub project, which only we can see,
-                so we can track the fix. The website&apos;s host briefly
-                processes your IP address to deliver the form and to limit
-                spam.
+                Support form messages are delivered to us by email through
+                AgentMail, our email provider, and kept in our inbox only as
+                long as we need them to help you. The website&apos;s host
+                briefly processes your IP address to deliver the form and to
+                limit spam.
               </p>
             </section>
 
@@ -265,18 +266,10 @@ export default function Privacy() {
                   .
                 </li>
                 <li>
-                  <strong>GitHub</strong> (United States). Private issue
-                  tracking for support requests. See{" "}
-                  <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">
-                    GitHub&apos;s privacy statement
-                  </a>
-                  .
-                </li>
-                <li>
-                  <strong>Google</strong> (United States). Email, for receiving
-                  and answering support messages. See{" "}
-                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-                    Google&apos;s privacy policy
+                  <strong>AgentMail</strong> (United States). Email, for
+                  delivering and answering support messages. See{" "}
+                  <a href="https://www.agentmail.to/legal/privacy" target="_blank" rel="noopener noreferrer">
+                    AgentMail&apos;s privacy policy
                   </a>
                   .
                 </li>
@@ -307,14 +300,13 @@ export default function Privacy() {
                   the app or delete the app.
                 </li>
                 <li>
-                  <strong>Analytics events</strong> are kept in PostHog for as
-                  long as they help us understand how the app is used, and no
-                  longer than our PostHog plan retains them.
+                  <strong>Analytics events</strong> are kept in PostHog for up
+                  to 1 year, the retention period of our PostHog plan.
                 </li>
                 <li>
-                  <strong>Support messages</strong> are kept while we help you
-                  and afterward as a record of the bug or request. You can ask
-                  us to delete them at any time.
+                  <strong>Support messages</strong> are kept in our inbox only
+                  as long as we need them to help you. You can ask us to delete
+                  them at any time.
                 </li>
               </ul>
             </section>

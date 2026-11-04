@@ -5,5 +5,5 @@ import "../pages.css";
  * Nav and footer come from Chrome.tsx (SiteNav / SiteFooter).
  */
 
-/** Public contact address. Same address the app's "Bugs & Feedback" button uses. */
-export const CONTACT_EMAIL = "footer-gas.9j@icloud.com";
+/** Public contact address: the Birch Support inbox on AgentMail. */
+export const CONTACT_EMAIL = "hellobirch@agentmail.to";

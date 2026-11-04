@@ -77,9 +77,9 @@ The site is optimized for static deployment on Vercel, Netlify, or any static ho
 
 ## Contact
 
-Created by Thianh Lu / Tsukemen.io
+Made by Tsukemen.io
 
-- Email: luthianh@gmail.com
+- Email: hellobirch@agentmail.to
 - App Store: [Download Birch](https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381)
 
 ## License
