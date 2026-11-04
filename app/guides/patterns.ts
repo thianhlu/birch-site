@@ -1,6 +1,6 @@
 import type { PacerPattern } from "../components/BreathPacer";
 
-/** Birch's in-app patterns that have a confirmed phase order. */
+/** Birch's in-app patterns (phase order confirmed by the developer). One count = one second. */
 export const PATTERNS: Record<string, PacerPattern> = {
   weil: {
     id: "weil",
@@ -30,6 +30,17 @@ export const PATTERNS: Record<string, PacerPattern> = {
     phases: [
       { label: "Inhale", secs: 7 },
       { label: "Exhale", secs: 11 },
+    ],
+  },
+  balance: {
+    id: "balance",
+    name: "Balance 3-3-6-3",
+    short: "3-3-6-3",
+    phases: [
+      { label: "Inhale", secs: 3 },
+      { label: "Hold", secs: 3 },
+      { label: "Exhale", secs: 6 },
+      { label: "Hold", secs: 3 },
     ],
   },
   coherence: {

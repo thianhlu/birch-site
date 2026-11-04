@@ -6,7 +6,7 @@ const PATTERN_LINES = [
   "- Weil Method 4-7-8: inhale 4, hold 7, exhale 8",
   "- Box Breathing 4-4-4-4: inhale 4, hold 4, exhale 4, hold 4",
   "- Gentle Wave 7-11: inhale 7, exhale 11",
-  "- Balance 3-3-6-3",
+  "- Balance 3-3-6-3: inhale 3, hold 3, exhale 6, hold 3 (4 breaths per minute)",
   "- Heart Coherence 6-6: inhale 6, exhale 6 (5 breaths per minute)",
   "- Slow-Paced 4-6: inhale 4, exhale 6 (6 breaths per minute)",
 ];
@@ -27,6 +27,7 @@ export function llmsTxt() {
     "",
     "- Six breathing patterns:",
     ...PATTERN_LINES.map((l) => "  " + l),
+    "- One count is one second in Birch's pacers.",
     "- Set a time or a number of cycles and follow inhale, hold, and exhale on screen.",
     "- Habits: yes/no or count-based (for example drink water, take vitamins, read, fast, walk, meditate, or your own), with emoji, color, and reminders at times you choose.",
     "- Breathing and habits show together across your week and month, with streaks and monthly summaries. You can log today or a recent day.",

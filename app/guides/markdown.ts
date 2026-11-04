@@ -24,7 +24,7 @@ export function guideMarkdown(g: Guide) {
   g.faqs.forEach(([q, a]) => out.push(`### ${q}`, "", abs(a), ""));
   out.push("## Practice with Birch", "");
   out.push(
-    `Birch is a free iPhone and Apple Watch app with six breathing patterns (Weil Method 4-7-8, Box 4-4-4-4, Gentle Wave 7-11, Balance 3-3-6-3, Heart Coherence 6-6, Slow-Paced 4-6) and simple daily habit tracking. No ads, no account, no subscription. App Store: ${APP}`,
+    `Birch is a free iPhone and Apple Watch app with six breathing patterns (Weil Method 4-7-8, Box 4-4-4-4, Gentle Wave 7-11, Balance 3-3-6-3 (inhale 3, hold 3, exhale 6, hold 3), Heart Coherence 6-6, Slow-Paced 4-6) and simple daily habit tracking. No ads, no account, no subscription. App Store: ${APP}`,
     "",
   );
   out.push("## Related guides", "");

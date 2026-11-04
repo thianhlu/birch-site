@@ -1,5 +1,6 @@
 import { SITE, APP } from "../components/Chrome";
 import { GUIDES, GUIDES_INDEX, plain, type Guide } from "./data";
+import { PATTERNS } from "./patterns";
 
 const org = {
   "@type": "Organization",
@@ -16,6 +17,9 @@ const app = {
   operatingSystem: "iOS, watchOS",
   applicationCategory: "HealthApplication",
   installUrl: APP,
+  featureList: Object.values(PATTERNS).map(
+    (p) => `${p.name}: ${p.phases.map((ph) => `${ph.label.toLowerCase()} ${ph.secs}`).join(", ")} (one count = one second)`,
+  ),
   offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 

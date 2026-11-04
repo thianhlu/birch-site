@@ -56,6 +56,7 @@ export default function BreathPacer({ patterns }: { patterns: PacerPattern[] }) 
   const [view, setView] = useState({ i: -1, left: 0, cycle: 0 });
   const reduced = useSyncExternalStore(subscribeReduced, getReduced, () => false);
   const orb = useRef<HTMLDivElement>(null);
+  const bar = useRef<HTMLOListElement>(null);
   const elapsed = useRef(0);
   const pattern = patterns[pi];
 
@@ -71,6 +72,10 @@ export default function BreathPacer({ patterns }: { patterns: PacerPattern[] }) 
       if (orb.current) {
         const s = reduced ? 0.78 : scaleAt(pattern, loc.i, loc.t);
         orb.current.style.transform = `scale(${s.toFixed(4)})`;
+      }
+      if (bar.current && !reduced) {
+        const cycleMs = pattern.phases.reduce((a, ph) => a + ph.secs, 0) * 1000;
+        bar.current.style.setProperty("--p", ((elapsed.current % cycleMs) / cycleMs).toFixed(4));
       }
       const key = `${loc.i}-${loc.left}-${loc.cycle}`;
       if (key !== shown) {
@@ -88,6 +93,7 @@ export default function BreathPacer({ patterns }: { patterns: PacerPattern[] }) 
     elapsed.current = 0;
     setView({ i: -1, left: 0, cycle: 0 });
     if (orb.current) orb.current.style.transform = `scale(${reduced ? 0.78 : LO})`;
+    bar.current?.style.setProperty("--p", "0");
     setPi(next);
   };
 
@@ -125,9 +131,13 @@ export default function BreathPacer({ patterns }: { patterns: PacerPattern[] }) 
           </span>
         </div>
       </div>
-      <ol className="pacer-phases" aria-label="Pattern">
+      <ol className={`pacer-phases${running && !reduced ? " is-running" : ""}`} aria-label="Pattern" ref={bar}>
         {pattern.phases.map((ph, k) => (
-          <li key={k} className={view.i === k ? "on" : ""}>
+          <li
+            key={k}
+            className={`ph-${ph.label.toLowerCase()}${view.i === k ? " on" : ""}`}
+            style={{ flexGrow: ph.secs }}
+          >
             {ph.label} <b>{ph.secs}</b>
           </li>
         ))}

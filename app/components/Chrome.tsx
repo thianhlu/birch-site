@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export const SITE = "https://birch-breathe.vercel.app";
+import { SITE } from "../site";
+export { SITE };
 export const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
 export const PRIVACY =

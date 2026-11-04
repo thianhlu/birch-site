@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const site = "https://birch-breathe.vercel.app";
+import { SITE as site } from "./site";
 
 // Search and AI crawlers are explicitly welcome; the whole site is public.
 const BOTS = [

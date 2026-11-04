@@ -58,7 +58,7 @@ export const GUIDES: Guide[] = [
     kicker: "Breathing guide · Weil Method",
     query: "how to do 4-7-8 breathing",
     answer:
-      "To do 4-7-8 breathing, empty your lungs, inhale quietly through your nose for 4 counts, hold for 7, then exhale through your mouth with a soft whoosh for 8. That is one breath. Start with four breaths, twice a day. The ratio matters more than the speed, so count faster if the hold feels hard.",
+      "To do 4-7-8 breathing, empty your lungs, inhale quietly through your nose for 4 counts, hold for 7, then exhale through your mouth with a soft whoosh for 8. That is one breath. Start with four breaths, twice a day. In Birch, one count is one second, so each breath takes 19 seconds.",
     patterns: ["weil"],
     totalTime: "PT2M",
     stepsHeading: "4-7-8 breathing, step by step",
@@ -76,7 +76,7 @@ export const GUIDES: Guide[] = [
         heading: "What 4-7-8 breathing is",
         body: [
           "4-7-8 breathing is a counted breathing exercise popularized by Dr. Andrew Weil, who describes it in a patient handout as a simple tool for general relaxation and for managing stress. In Birch it is called the **Weil Method**.",
-          "The pattern has three parts: a short inhale, a longer hold, and the longest exhale. Weil's handout is clear that the exact seconds are not the point: the 4:7:8 ratio is. If holding for seven feels like too much, count faster and keep the ratio. As you get used to it, you can slow the count down.",
+          "The pattern has three parts: a short inhale, a longer hold, and the longest exhale. In Birch's pacer, one count is one second, so one breath takes 19 seconds. Weil's handout notes that the 4:7:8 ratio matters most, so when you count on your own and the seven-count hold feels like too much at first, a slightly quicker count that keeps the ratio is fine. Work up to full seconds as it gets easier.",
         ],
       },
       {
@@ -92,7 +92,7 @@ export const GUIDES: Guide[] = [
         heading: "Common mistakes",
         bullets: [
           "**Doing too many breaths too soon.** Weil's handout says not to do more than four breaths at one time for the first month. Later you can go up to eight.",
-          "**Forcing the hold.** The hold should feel like a pause, not a contest. Speed up the count instead.",
+          "**Forcing the hold.** The hold should feel like a pause, not a contest. If it feels like a strain, stop and breathe normally, then try again later.",
           "**Gulping the inhale.** Breathe in quietly through your nose. A loud, fast inhale defeats the purpose.",
           "**Rushing the exhale.** The eight-count out-breath is the longest part. Let it be slow and complete.",
           "**Only using it in a crisis.** It is easier to use in a hard moment if you have already practiced it on calm days.",
@@ -103,7 +103,7 @@ export const GUIDES: Guide[] = [
         heading: "How long to practice",
         body: [
           "Weil recommends doing it at least twice a day. Cleveland Clinic suggests three cycles twice a day while you learn. Either way, the sessions are short: one to two minutes.",
-          "Feeling a little light-headed the first few times is common, and both sources say it passes with practice. If it happens, stop, breathe normally, and try again later with a faster count. To make it a daily thing, pair it with something you already do, like getting into bed. Our guide to [building a daily breathing habit](/guides/daily-breathing-habit) covers this.",
+          "Feeling a little light-headed the first few times is common, and both sources say it passes with practice. If it happens, stop, breathe normally, and try again later. To make it a daily thing, pair it with something you already do, like getting into bed. Our guide to [building a daily breathing habit](/guides/daily-breathing-habit) covers this.",
         ],
       },
       {
@@ -117,8 +117,8 @@ export const GUIDES: Guide[] = [
     faqs: [
       ["How many times should you do 4-7-8 breathing?", "Four breaths at a time, at least twice a day, is the routine in Dr. Weil's handout. He suggests staying at four breaths for the first month, then going up to eight if you want. Cleveland Clinic suggests three cycles twice a day while you learn."],
       ["Does 4-7-8 breathing help you fall asleep?", "Many people use it as part of a bedtime wind-down, and Weil suggests it for falling asleep. It is a relaxation routine, not a sleep treatment, and results vary from person to person. If trouble sleeping keeps going, talk to a doctor. See our guide to [breathing exercises for sleep](/guides/breathing-exercises-for-sleep)."],
-      ["Why do I feel light-headed during 4-7-8 breathing?", "It is common at first while your body gets used to slower breathing, and Weil and Cleveland Clinic both say it passes. Stop and breathe normally if it happens, then try again with a faster count. Stop altogether if you feel unwell."],
-      ["Do the seconds have to be exact?", "No. The ratio of 4:7:8 matters more than the speed. If holding for seven is hard, count faster and keep the same proportions."],
+      ["Why do I feel light-headed during 4-7-8 breathing?", "It is common at first while your body gets used to slower breathing, and Weil and Cleveland Clinic both say it passes. Stop and breathe normally if it happens, then try again later. Stop altogether if you feel unwell."],
+      ["Is one count one second?", "In Birch, yes: one count is one second, so a full 4-7-8 breath takes 19 seconds. Weil's handout says the 4:7:8 ratio matters most, so if you count on your own and the hold is hard at first, a slightly quicker count that keeps the ratio is fine while you build up."],
       ["Can I do 4-7-8 breathing on Apple Watch?", "Yes. Birch's Apple Watch app includes the Weil Method with haptic cues for each phase and sessions from 1 to 5 minutes (watchOS 11 or later). Apple's built-in Breathe session uses a simple in-and-out animation rather than set holds. See [breathing on Apple Watch](/guides/apple-watch-breathing)."],
       ["Is 4-7-8 better than box breathing?", "Neither is better. 4-7-8 has a long exhale and a short routine, so many people keep it for winding down. [Box breathing](/guides/box-breathing) has four equal sides and feels steady, so it is often used to reset during the day. Try both and keep the one you'll actually do."],
     ],
@@ -237,7 +237,7 @@ export const GUIDES: Guide[] = [
         heading: "What 7-11 breathing is",
         body: [
           "7-11 breathing is a two-part pattern: a 7-count in-breath and an 11-count out-breath. Student Minds, the UK student mental health charity, describes it as an exercise to reduce stress in the moment, and says regular practice may help you feel calmer generally. In Birch it is called **Gentle Wave**.",
-          "The long, unhurried out-breath is the core of it. There are no holds, which is why many people find it gentler than [4-7-8](/guides/4-7-8-breathing) or [box breathing](/guides/box-breathing). The numbers are counts, not strict seconds. Many people count a little faster than one per second, especially at first.",
+          "The long, unhurried out-breath is the core of it. There are no holds, which is why many people find it gentler than [4-7-8](/guides/4-7-8-breathing) or [box breathing](/guides/box-breathing). In Birch, one count is one second, so one breath takes 18 seconds, a little over three breaths a minute. If 11 seconds out feels too long at first, shorten both numbers and build up.",
         ],
       },
       {
@@ -281,7 +281,7 @@ export const GUIDES: Guide[] = [
     ],
     faqs: [
       ["How long should you do 7-11 breathing?", "5 to 10 minutes is the usual suggestion (Student Minds). Start with a couple of minutes if that is all you have."],
-      ["What if I can't breathe out for 11?", "Count faster, or shorten both numbers, for example 5 in and 8 out. The point is a longer out-breath than in-breath, not hitting exactly 11."],
+      ["What if I can't breathe out for 11?", "Shorten both numbers, for example 5 in and 8 out, then build up. The point is a longer out-breath than in-breath, not hitting exactly 11."],
       ["Is 7-11 breathing from the NHS?", "The NHS's breathing exercise for stress uses a steady count of up to 5 in and 5 out for at least 5 minutes. 7-11 is a separate pattern taught by Student Minds and others. Both are slow, regular breathing."],
       ["7-11 vs 4-7-8: what's the difference?", "7-11 has no holds and is meant for several minutes. [4-7-8](/guides/4-7-8-breathing) adds a 7-count hold and is done as a short set of four breaths. Both have a long exhale."],
       ["Can I do 7-11 breathing lying down?", "Yes. Lying on your back with your knees bent is comfortable, and it's a natural way to wind down in bed."],
@@ -566,7 +566,7 @@ export const GUIDES: Guide[] = [
     query: "breathing app for apple watch",
     answer:
       "On Apple Watch, open the Mindfulness app and tap Breathe. Breathe in as the animation grows and out as it shrinks, for 1 to 5 minutes. Change the breaths per minute in Settings > Mindfulness. For patterns with holds or longer exhales, like 4-7-8, box, or 7-11, use an app such as Birch, which cues each phase with haptics.",
-    patterns: ["box", "weil", "wave", "slow", "coherence"],
+    patterns: ["box", "weil", "wave", "balance", "slow", "coherence"],
     totalTime: "PT3M",
     stepsHeading: "Start a Breathe session on Apple Watch",
     steps: [
@@ -603,7 +603,7 @@ export const GUIDES: Guide[] = [
         id: "birch",
         heading: "Birch on Apple Watch",
         body: [
-          "Birch's Watch app (new in Birch 3.5) has six patterns: Weil Method 4-7-8, Box Breathing 4-4-4-4, Gentle Wave 7-11, Balance 3-3-6-3, Heart Coherence 6-6, and Slow-Paced 4-6. Sessions run from 1 to 5 minutes, with gentle haptic cues for each breath. Completed sessions sync to Birch on your iPhone and can save Mindful Minutes to Apple Health. It requires watchOS 11 or later and is free, with no ads, no subscription, and no account.",
+          "Birch's Watch app (new in Birch 3.5) has six patterns: Weil Method 4-7-8, Box Breathing 4-4-4-4, Gentle Wave 7-11, Balance 3-3-6-3 (inhale 3, hold 3, exhale 6, hold 3), Heart Coherence 6-6, and Slow-Paced 4-6. Sessions run from 1 to 5 minutes, with gentle haptic cues for each breath. Completed sessions sync to Birch on your iPhone and can save Mindful Minutes to Apple Health. It requires watchOS 11 or later and is free, with no ads, no subscription, and no account.",
           "On iPhone, Birch puts your breathing beside simple daily habits, like drinking water, taking vitamins, or a walk, so you can see both across your week and month.",
         ],
       },

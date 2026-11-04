@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { GUIDES, GUIDES_INDEX } from "./guides/data";
 
-const site = "https://birch-breathe.vercel.app";
+import { SITE as site } from "./site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

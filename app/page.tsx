@@ -3,6 +3,7 @@ import Link from "next/link";
 import MoreFeatures from "./components/MoreFeatures";
 import Reveal from "./components/Reveal";
 import { Phone, Watch } from "./components/Devices";
+import { SITE } from "./site";
 import { APP, SiteFooter, SiteNav, StoreBadge } from "./components/Chrome";
 import { GUIDES } from "./guides/data";
 
@@ -73,7 +74,7 @@ const jsonLd = {
   alternateName: "Birch",
   operatingSystem: "iOS, watchOS",
   applicationCategory: "HealthApplication",
-  url: "https://birch-breathe.vercel.app",
+  url: SITE,
   installUrl: APP,
   description:
     "Free 4-7-8 and box breathing for iPhone and Apple Watch, with simple habit tracking. No subscriptions. No ads. No account.",
@@ -252,7 +253,7 @@ export default function Home() {
             <br />
             whenever you need one
           </h2>
-          <div className="moments" tabIndex={0} aria-label="Moments with Birch">
+          <div className="moments home-moments" tabIndex={0} aria-label="Moments with Birch">
             {moments.map((m) => (
               <figure className="moment" key={m.src}>
                 <Image src={m.src} alt={m.alt} width={600} height={800} sizes="260px" />
@@ -565,9 +566,10 @@ export default function Home() {
             <Image
               src="/photos/flatlay.webp"
               alt="Tea, an eye mask, a water bottle, a notebook, and a smartwatch laid out on a table"
-              width={1280}
-              height={720}
-              sizes="100vw"
+              width={2560}
+              height={1440}
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              quality={86}
             />
           </div>
           <p className="fineprint">
