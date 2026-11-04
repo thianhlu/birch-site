@@ -44,6 +44,9 @@ export default function SupportForm({ contactEmail }: { contactEmail: string }) 
         message: json.error || "Something went wrong. Please try again.",
         fields: json.fields || {},
       });
+      requestAnimationFrame(() =>
+        formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
+      );
     } catch {
       setStatus({
         kind: "error",
@@ -94,8 +97,9 @@ export default function SupportForm({ contactEmail }: { contactEmail: string }) 
           {status.message}{" "}
           {Object.keys(status.fields).length === 0 && (
             <>
-              You can also email{" "}
-              <a href={`mailto:${contactEmail}?subject=Birch%20support`}>{contactEmail}</a>.
+              Please email us at{" "}
+              <a href={`mailto:${contactEmail}?subject=Birch%20support`}>{contactEmail}</a>{" "}
+              instead.
             </>
           )}
         </div>

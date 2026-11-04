@@ -284,8 +284,7 @@ export async function POST(req: Request) {
   return NextResponse.json<Fail>(
     {
       ok: false,
-      error:
-        "Sorry, we couldn't send your message right now. Your note was saved on our side, but to be sure we see it, please email us instead.",
+      error: "Sorry, we couldn't send your message right now.",
     },
     { status: 503 },
   );
