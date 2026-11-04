@@ -6,10 +6,8 @@ import { Phone, Watch } from "./components/Devices";
 
 const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
-const PRIVACY =
-  "https://docs.google.com/document/d/1lAYHHEQAuaKjcjjFguUm-VnnO9p8V4lCfYc6BOHUVH4/edit?usp=sharing";
-const SUPPORT =
-  "https://docs.google.com/forms/d/e/1FAIpQLScDG6nD1RzDc5NEO31206FtgrPoTFgAzyPUReW3FoJSfIYDbg/viewform";
+const PRIVACY = "/privacy";
+const SUPPORT = "/support";
 
 const RATING = "4.9";
 const RATING_COUNT = "115";
@@ -68,6 +66,10 @@ const faqs = [
   [
     "Can Birch remind me about my habits?",
     "Yes. Set gentle reminders at times you choose. Missed one? Log today or update a recent day, then see breathing cycles, completed habits, streaks, and monthly summaries together. Progress without pressure.",
+  ],
+  [
+    "How do I get help or report a bug?",
+    "Use the support form at hellobirch.app/support. Tell us what happened, plus your device and Birch version if you can. Every message gets read.",
   ],
 ];
 
@@ -191,6 +193,7 @@ export default function Home() {
             <a href="#habits">Habits</a>
             <a href="#watch">Watch</a>
             <a href="#faq">FAQ</a>
+            <Link href="/support">Support</Link>
           </div>
           <a className="nav-cta" href={APP} target="_blank" rel="noopener noreferrer">
             Get Birch
@@ -631,15 +634,11 @@ export default function Home() {
           <div className="foot-col">
             <h2>Help</h2>
             <a href="#faq">FAQ</a>
-            <a href={SUPPORT} target="_blank" rel="noopener noreferrer">
-              Support
-            </a>
+            <Link href={SUPPORT}>Support</Link>
           </div>
           <div className="foot-col">
             <h2>Legal</h2>
-            <a href={PRIVACY} target="_blank" rel="noopener noreferrer">
-              Privacy Policy
-            </a>
+            <Link href={PRIVACY}>Privacy Policy</Link>
           </div>
         </div>
       </footer>
