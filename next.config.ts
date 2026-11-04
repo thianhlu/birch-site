@@ -1,6 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async rewrites() {
+    return {
+      beforeFiles: [
+        // Markdown mirrors of each guide for LLMs: /guides/<slug>.md
+        { source: "/guides/:slug([a-z0-9-]+)\\.md", destination: "/guides-md/:slug" },
+      ],
+    };
+  },
   async redirects() {
     return [
       {
