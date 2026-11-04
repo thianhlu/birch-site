@@ -34,7 +34,7 @@ const moments = [
 
 const quotes = [
   "perfect. dont change.",
-  "please dont bring in adds or forms of payment",
+  "Does what it says on the tin. Perfect.",
   "Love the simplicity",
   "Simple, ad free.",
 ];
