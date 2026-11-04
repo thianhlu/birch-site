@@ -216,10 +216,11 @@ export default function Privacy() {
               </p>
               <p>
                 Support form messages are delivered to us by email through
-                AgentMail, our email provider, and kept in our inbox only as
-                long as we need them to help you. The website&apos;s host
-                briefly processes your IP address to deliver the form and to
-                limit spam.
+                AgentMail, our email provider, and also copied into a private
+                GitHub repository that only we can access, so we can track and
+                fix them. They&apos;re kept only as long as we need them to
+                help you. The website&apos;s host briefly processes your IP
+                address to deliver the form and to limit spam.
               </p>
             </section>
 
@@ -270,6 +271,14 @@ export default function Privacy() {
                   delivering and answering support messages. See{" "}
                   <a href="https://www.agentmail.to/legal/privacy" target="_blank" rel="noopener noreferrer">
                     AgentMail&apos;s privacy policy
+                  </a>
+                  .
+                </li>
+                <li>
+                  <strong>GitHub</strong> (United States). To track support
+                  requests in a private repository. See{" "}
+                  <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">
+                    GitHub&apos;s privacy statement
                   </a>
                   .
                 </li>
