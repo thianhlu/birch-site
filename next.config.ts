@@ -10,6 +10,15 @@ const nextConfig: NextConfig = {
       beforeFiles: [
         // Markdown mirrors of each guide for LLMs: /guides/<slug>.md
         { source: "/guides/:slug([a-z0-9-]+)\\.md", destination: "/guides-md/:slug" },
+        // PostHog analytics proxy (avoid ad blockers)
+        {
+          source: "/ingest/static/:path*",
+          destination: "https://us-assets.i.posthog.com/static/:path*",
+        },
+        {
+          source: "/ingest/:path*",
+          destination: "https://us.i.posthog.com/:path*",
+        },
       ],
     };
   },

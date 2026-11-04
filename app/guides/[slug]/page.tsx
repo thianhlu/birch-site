@@ -170,7 +170,7 @@ export default async function GuidePage({ params }: Props) {
                     <h2 id={`${sec.id}-h`}>{sec.heading}</h2>
                     {content}
                     {isWatch && <span className="watch-req">Requires watchOS 11 or later.</span>}
-                    <StoreBadge light={isWatch} />
+                    <StoreBadge light={isWatch} location="guide_cta" guideSlug={g.slug} />
                   </div>
                   <div className="gdevice-art">
                     <Phone
@@ -252,7 +252,7 @@ export default async function GuidePage({ params }: Props) {
                 and on Apple Watch with gentle haptic cues, so you can keep your eyes closed. Keep small daily
                 habits beside your breathing. Free, with no ads, no account, and no subscription.
               </p>
-              <StoreBadge />
+              <StoreBadge location="guide_final_cta" guideSlug={g.slug} />
             </header>
             <div className="flatlay">
               <Image
