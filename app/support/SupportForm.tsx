@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { LIMITS, TOPICS } from "./topics";
+import { trackSupportFormSubmitted } from "../PostHogProvider";
 
 type Status =
   | { kind: "idle" }
@@ -34,6 +35,7 @@ export default function SupportForm({ contactEmail }: { contactEmail: string }) 
         fields?: Record<string, string>;
       };
       if (res.ok && json.ok) {
+        trackSupportFormSubmitted();
         setStatus({ kind: "sent", email: data.email });
         formRef.current?.reset();
         window.scrollTo({ top: 0, behavior: "smooth" });

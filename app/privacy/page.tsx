@@ -3,7 +3,7 @@ import Link from "next/link";
 import { SiteFooter, SiteNav } from "../components/Chrome";
 import { CONTACT_EMAIL } from "../components/PageChrome";
 
-const EFFECTIVE = "November 3, 2026";
+const EFFECTIVE = "November 4, 2026";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Birch",
@@ -227,8 +227,16 @@ export default function Privacy() {
             <section className="legal-card" id="website">
               <h2>This website</h2>
               <p>
-                hellobirch.app doesn&apos;t use cookies, analytics, or ads. It
-                is hosted by Vercel. Like any web host, Vercel processes basic
+                hellobirch.app uses PostHog for cookieless, anonymous page analytics. 
+                This lets us see which pages get visited and where traffic comes from, 
+                without identifying individual visitors. No cookies or other persistent 
+                identifiers are set. The analytics collect pages viewed, referrer, 
+                approximate country and region from your IP address (which is then discarded), 
+                and device and browser type. This is the same PostHog analytics provider used 
+                in the app, as described above.
+              </p>
+              <p>
+                The site is hosted by Vercel. Like any web host, Vercel processes basic
                 request information, such as your IP address, browser, and the
                 pages you request, to serve the site and protect it from abuse.
               </p>

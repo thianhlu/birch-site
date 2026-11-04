@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { SITE } from "../site";
+import { trackAppStoreClick } from "../PostHogProvider";
 export { SITE };
 export const APP =
   "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
@@ -19,13 +22,14 @@ export function AppleGlyph({ size = 18 }: { size?: number }) {
   );
 }
 
-export function StoreBadge({ light = false }: { light?: boolean }) {
+export function StoreBadge({ light = false, location = "cta", guideSlug }: { light?: boolean; location?: string; guideSlug?: string }) {
   return (
     <a
       className={light ? "store-badge light" : "store-badge"}
       href={APP}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackAppStoreClick(location, guideSlug)}
     >
       <AppleGlyph size={22} />
       <span>
@@ -57,7 +61,7 @@ export function SiteNav({ home = false }: { home?: boolean }) {
         <Link className="nav-guides-m" href="/guides">
           Guides
         </Link>
-        <a className="nav-cta" href={APP} target="_blank" rel="noopener noreferrer">
+        <a className="nav-cta" href={APP} target="_blank" rel="noopener noreferrer" onClick={() => trackAppStoreClick("nav")}>
           Get Birch
         </a>
       </nav>
@@ -79,7 +83,7 @@ export function SiteFooter({ home = false }: { home?: boolean }) {
         </div>
         <div className="foot-col">
           <h2>App</h2>
-          <a href={APP} target="_blank" rel="noopener noreferrer">
+          <a href={APP} target="_blank" rel="noopener noreferrer" onClick={() => trackAppStoreClick("footer")}>
             Download
           </a>
           <a href={`${base}#breathe`}>Breathing</a>

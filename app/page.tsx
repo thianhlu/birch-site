@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import MoreFeatures from "./components/MoreFeatures";
@@ -6,6 +8,7 @@ import { Phone, Watch } from "./components/Devices";
 import { SITE } from "./site";
 import { APP, SiteFooter, SiteNav, StoreBadge } from "./components/Chrome";
 import { GUIDES } from "./guides/data";
+import { trackAppStoreClick } from "./PostHogProvider";
 
 const RATING = "4.9";
 const RATING_COUNT = "115";
@@ -181,7 +184,7 @@ export default function Home() {
                 Free 4-7-8 and box breathing for iPhone and Apple Watch, with a
                 few daily habits beside your breath.
               </p>
-              <StoreBadge />
+              <StoreBadge location="hero" />
               <RatingLine />
             </div>
             <div className="hero-devices">
@@ -225,7 +228,7 @@ export default function Home() {
 
         {/* Mobile app card */}
         <div className="app-card-wrap">
-          <a className="app-card" href={APP} target="_blank" rel="noopener noreferrer">
+          <a className="app-card" href={APP} target="_blank" rel="noopener noreferrer" onClick={() => trackAppStoreClick("app_card")}>
             <Image src="/images/birch-icon.png" alt="" width={56} height={56} />
             <span className="app-card-text">
               <strong>Birch</strong>
@@ -564,7 +567,7 @@ export default function Home() {
               whenever you like. Free on the App Store, with no ads, no account,
               and no subscription.
             </p>
-            <StoreBadge />
+            <StoreBadge location="final_cta" />
           </header>
           <div className="flatlay">
             <Image
@@ -583,7 +586,7 @@ export default function Home() {
         </section>
       </main>
 
-      <a className="qr-card" href={APP} target="_blank" rel="noopener noreferrer">
+      <a className="qr-card" href={APP} target="_blank" rel="noopener noreferrer" onClick={() => trackAppStoreClick("qr_card")}>
         <Image src="/images/appstore-qr.svg" alt="" width={64} height={64} unoptimized />
         <span>
           <strong>Get Birch for iOS</strong>
