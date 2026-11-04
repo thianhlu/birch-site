@@ -3,11 +3,9 @@ import Link from "next/link";
 import MoreFeatures from "./components/MoreFeatures";
 import Reveal from "./components/Reveal";
 import { Phone, Watch } from "./components/Devices";
-
-const APP =
-  "https://apps.apple.com/us/app/birch-breathe-relax-sleep/id6449722381";
-const PRIVACY = "/privacy";
-const SUPPORT = "/support";
+import { SITE } from "./site";
+import { APP, SiteFooter, SiteNav, StoreBadge } from "./components/Chrome";
+import { GUIDES } from "./guides/data";
 
 const RATING = "4.9";
 const RATING_COUNT = "115";
@@ -80,7 +78,7 @@ const jsonLd = {
   alternateName: "Birch",
   operatingSystem: "iOS, watchOS",
   applicationCategory: "HealthApplication",
-  url: "https://birch-breathe.vercel.app",
+  url: SITE,
   installUrl: APP,
   description:
     "Free 4-7-8 and box breathing for iPhone and Apple Watch, with simple habit tracking. No subscriptions. No ads. No account.",
@@ -115,34 +113,6 @@ function Stars({ size = 14 }: { size?: number }) {
         </svg>
       ))}
     </span>
-  );
-}
-
-function AppleGlyph({ size = 18 }: { size?: number }) {
-  return (
-    <svg viewBox="0 0 16 20" width={size * 0.8} height={size} aria-hidden="true">
-      <path
-        fill="currentColor"
-        d="M13.2 10.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-1.9-1.5-.2-3 .9-3.7.9s-2-.9-3.3-.9c-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.3.9 1.2 1.9 2.6 3.3 2.6 1.3 0 1.8-.9 3.4-.9s2 .9 3.4.8c1.4 0 2.3-1.2 3.2-2.5.9-1.4 1.3-2.8 1.3-2.9-.1 0-2.5-1-2.5-3.8zM11 3.8c.7-.9 1.2-2.1 1.1-3.3-1 .1-2.3.7-3 1.6-.7.8-1.3 2.1-1.1 3.3 1.2.1 2.3-.6 3-1.6z"
-      />
-    </svg>
-  );
-}
-
-function StoreBadge({ light = false }: { light?: boolean }) {
-  return (
-    <a
-      className={light ? "store-badge light" : "store-badge"}
-      href={APP}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <AppleGlyph size={22} />
-      <span>
-        <small>Download on the</small>
-        App Store
-      </span>
-    </a>
   );
 }
 
@@ -182,24 +152,7 @@ export default function Home() {
   return (
     <>
       <Reveal />
-      <header className="nav-wrap">
-        <nav className="nav" aria-label="Main">
-          <Link className="brand" href="/">
-            <Image src="/images/birch-mark.png" alt="" width={24} height={24} />
-            <span>Birch</span>
-          </Link>
-          <div className="nav-links">
-            <a href="#breathe">Breathing</a>
-            <a href="#habits">Habits</a>
-            <a href="#watch">Watch</a>
-            <a href="#faq">FAQ</a>
-            <Link href="/support">Support</Link>
-          </div>
-          <a className="nav-cta" href={APP} target="_blank" rel="noopener noreferrer">
-            Get Birch
-          </a>
-        </nav>
-      </header>
+      <SiteNav home />
 
       <main>
         <script
@@ -304,7 +257,7 @@ export default function Home() {
             <br />
             whenever you need one
           </h2>
-          <div className="moments" tabIndex={0} aria-label="Moments with Birch">
+          <div className="moments home-moments" tabIndex={0} aria-label="Moments with Birch">
             {moments.map((m) => (
               <figure className="moment" key={m.src}>
                 <Image src={m.src} alt={m.alt} width={600} height={800} sizes="260px" />
@@ -562,6 +515,30 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Guides */}
+        <section className="section" id="guides">
+          <header className="section-head reveal">
+            <h2 className="display">Learn the patterns</h2>
+            <p>
+              Free step-by-step guides, each with a pacer you can follow right
+              on the page.
+            </p>
+          </header>
+          <ul className="guide-cards home-guides reveal">
+            {GUIDES.map((g) => (
+              <li key={g.slug}>
+                <Link href={`/guides/${g.slug}`}>
+                  <span className="gc-kicker">{g.kicker.replace("Breathing guide · ", "")}</span>
+                  <strong>{g.h1}</strong>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="related-more reveal">
+            <Link href="/guides">All breathing guides</Link>
+          </p>
+        </section>
+
         {/* FAQ */}
         <section className="section" id="faq">
           <header className="section-head reveal">
@@ -593,9 +570,10 @@ export default function Home() {
             <Image
               src="/photos/flatlay.webp"
               alt="Tea, an eye mask, a water bottle, a notebook, and a smartwatch laid out on a table"
-              width={1280}
-              height={720}
-              sizes="100vw"
+              width={2560}
+              height={1440}
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              quality={86}
             />
           </div>
           <p className="fineprint">
@@ -613,35 +591,7 @@ export default function Home() {
         </span>
       </a>
 
-      <footer className="footer">
-        <div className="footer-inner">
-          <div className="foot-brand">
-            <Link className="brand" href="/">
-              <Image src="/images/birch-mark.png" alt="" width={22} height={22} />
-              <span>Birch</span>
-            </Link>
-            <span>© 2026 Tsukemen.io</span>
-          </div>
-          <div className="foot-col">
-            <h2>App</h2>
-            <a href={APP} target="_blank" rel="noopener noreferrer">
-              Download
-            </a>
-            <a href="#breathe">Breathing</a>
-            <a href="#habits">Habits</a>
-            <a href="#watch">Apple Watch</a>
-          </div>
-          <div className="foot-col">
-            <h2>Help</h2>
-            <a href="#faq">FAQ</a>
-            <Link href={SUPPORT}>Support</Link>
-          </div>
-          <div className="foot-col">
-            <h2>Legal</h2>
-            <Link href={PRIVACY}>Privacy Policy</Link>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter home />
     </>
   );
 }

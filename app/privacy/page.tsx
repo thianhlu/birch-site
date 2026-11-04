@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTACT_EMAIL, PageFooter, PageNav } from "../components/PageChrome";
+import { SiteFooter, SiteNav } from "../components/Chrome";
+import { CONTACT_EMAIL } from "../components/PageChrome";
 
 const EFFECTIVE = "November 3, 2026";
 
@@ -38,7 +39,7 @@ export default function Privacy() {
   const mail = `mailto:${CONTACT_EMAIL}?subject=Privacy%20question`;
   return (
     <>
-      <PageNav />
+      <SiteNav />
       <main className="page">
         <header className="page-head">
           <span className="page-kicker">Legal</span>
@@ -403,7 +404,7 @@ export default function Privacy() {
           </div>
         </div>
       </main>
-      <PageFooter />
+      <SiteFooter />
     </>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { SITE } from "./site";
 
 const sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://birch-breathe.vercel.app"),
+  metadataBase: new URL(SITE),
   title,
   description,
   applicationName: "Birch",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "https://birch-breathe.vercel.app",
+    url: SITE,
     siteName: "Birch",
     locale: "en_US",
     type: "website",

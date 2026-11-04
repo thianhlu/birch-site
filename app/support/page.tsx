@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CONTACT_EMAIL, PageFooter, PageNav } from "../components/PageChrome";
+import { SiteFooter, SiteNav } from "../components/Chrome";
+import { CONTACT_EMAIL } from "../components/PageChrome";
 import SupportForm from "./SupportForm";
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 export default function Support() {
   return (
     <>
-      <PageNav />
+      <SiteNav />
       <main className="page">
         <header className="page-head">
           <span className="page-kicker">Support</span>
@@ -75,7 +76,7 @@ export default function Support() {
           </aside>
         </div>
       </main>
-      <PageFooter />
+      <SiteFooter />
     </>
   );
 }
