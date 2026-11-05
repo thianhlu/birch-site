@@ -754,7 +754,7 @@ export const GUIDES: Guide[] = [
     kicker: "Guide · Habit building",
     query: "how to make drinking water a habit",
     answer:
-      "To make drinking water a habit, tie it to existing routines (drink a glass after waking, with meals, or after each bathroom break), use visual cues like a marked bottle, set a reminder, and track each glass with a simple check. Birch lets you log water by count on Apple Watch and set gentle reminders across your day.",
+      "To make drinking water a habit, tie it to existing routines (drink a glass after waking, with meals, or after each bathroom break), use visual cues like a marked bottle, set a Birch push notification reminder, and track each glass with a simple check. Birch lets you log water by count on Apple Watch with one tap and set gentle reminders across your day.",
     patterns: [],
     totalTime: "PT5M",
     stepsHeading: "Build a daily water habit in 6 steps",
@@ -762,9 +762,9 @@ export const GUIDES: Guide[] = [
       { name: "Pick your target count", time: "1 min", text: "Most people aim for about 8 glasses a day. If a doctor or dietitian gave you a different target, use theirs. If you have been told to limit fluids, follow that guidance." },
       { name: "Stack it with existing habits", time: "2 min", text: "After I wake up, I drink a glass. After I use the bathroom, I drink water. After I start work, I fill my bottle. After each meal, one glass. Anchor water to things you already do every day." },
       { name: "Use a visual cue", time: "1 min", text: "Keep a reusable bottle on your desk, mark the side with times or counts, or set out the number of glasses you want to finish by bedtime." },
-      { name: "Set one or two reminders", time: "1 min", text: "Midmorning and midafternoon, or whatever times you tend to forget. Just enough to nudge, not nag." },
+      { name: "Set a Birch reminder", time: "1 min", text: "Add a water habit in Birch and set a push notification reminder for midmorning, midafternoon, or whatever time you tend to forget. One or two reminders a day, just enough to nudge." },
       { name: "Track each glass or bottle", time: "10 sec per glass", text: "Mark it done right after you drink. A simple count (one, two, three…) beats trying to remember at the end of the day. On Apple Watch, one tap logs it." },
-      { name: "Review weekly", time: "1 min", text: "At the end of the week, look at your count across the days. Most people see a pattern: weekends dip, or mornings are easier than afternoons. Adjust cues or reminders where the gaps are." },
+      { name: "Review weekly", time: "1 min", text: "At the end of the week, look at your count across the days in Birch. Most people see a pattern: weekends dip, or mornings are easier than afternoons. Adjust your cues or Birch reminder times where the gaps are." },
     ],
     sections: [
       {
@@ -794,7 +794,7 @@ export const GUIDES: Guide[] = [
         bullets: [
           "**No cue, just willpower.** Remembering to drink is hard. Stack it with bathroom breaks or meals so it happens automatically.",
           "**Tracking at the end of the day.** You'll forget half. Log each glass right after you drink it.",
-          "**Setting ten reminders.** One or two well-placed reminders beat constant notifications you start ignoring.",
+          "**Setting ten reminders.** One or two well-placed Birch reminders beat constant notifications you start ignoring.",
           "**Switching units (glasses vs bottles vs ounces).** Pick one count (glasses, bottles, or whatever feels simple) and stick with it all month. Birch lets you count by number so you don't have to do math.",
           "**Treating one slip as failure.** Missed yesterday? Log today. Consistency beats perfection.",
         ],
@@ -814,13 +814,13 @@ export const GUIDES: Guide[] = [
         id: "with-birch",
         heading: "Tracking water in Birch",
         body: [
-          "Birch has a water habit you can log by count: one tap per glass on iPhone or Apple Watch. Set a reminder at a time that works (midmorning, after lunch, whatever fits your day). Your daily total, weekly pattern, and monthly summary show on one screen alongside your breathing and other small habits. Missed a day? Update a recent date. Free, no ads, no account.",
+          "Add a water habit in Birch and log by count: one tap per glass on iPhone or Apple Watch. Set a push notification reminder at a time that works (midmorning, after lunch, whatever fits your day). When the notification arrives, drink water and log it. Your daily total, weekly pattern, and monthly summary show on one screen alongside your breathing and other small habits. Missed a day? Update a recent date. Free, no ads, no account.",
         ],
       },
     ],
     faqs: [
       ["How many glasses of water should I drink a day?", "Eight glasses (about 64 oz or 2 liters) is common advice. Mayo Clinic's broader guidance is about 11.5 to 15.5 cups of total fluids a day (including from food), varying by sex, activity, and climate. If a healthcare provider gave you a different target or told you to limit fluids, follow their advice."],
-      ["How do I remember to drink water every day?", "Stack it with an existing habit (after waking, with meals, after bathroom breaks), use a visual cue like a marked bottle, set a reminder, and track each glass right after you drink it. Tracking on Apple Watch makes it one tap."],
+      ["How do I remember to drink water every day?", "Stack it with an existing habit (after waking, with meals, after bathroom breaks), use a visual cue like a marked bottle, set a Birch push notification reminder, and track each glass right after you drink it in Birch. On Apple Watch it's one tap."],
       ["What if I don't like plain water?", "Herbal tea, sparkling water, and water with a slice of lemon or cucumber all count. The point is hydration, not forcing yourself to drink something you hate."],
       ["How long does it take to form a water-drinking habit?", "It varies. Some studies suggest 2 to 8 weeks for a simple habit. The key is daily tracking and tying it to something you already do. You'll know it's a habit when you reach for water without thinking."],
       ["Is there a free water tracker for Apple Watch?", "Birch is free for iPhone and Apple Watch. Log water by count with one tap, set reminders, see your daily and weekly totals, and track it alongside breathing and other habits. No ads, no subscription, no account."],
@@ -841,7 +841,7 @@ export const GUIDES: Guide[] = [
     kicker: "Guide · Habit building",
     query: "how to remember to take vitamins",
     answer:
-      "To remember your vitamins, keep them next to something you use every morning (coffee maker, toothbrush), use a daily pill organizer as a visual check, set a reminder at the same time each day, and log it as soon as you take them. Birch lets you check off vitamins with one tap on Apple Watch and shows your streak across the week.",
+      "To remember your vitamins, keep them next to something you use every morning (coffee maker, toothbrush), use a daily pill organizer as a visual check, set a Birch push notification reminder at the same time each day, and log it as soon as you take them. Birch lets you check off vitamins with one tap on Apple Watch and shows your streak across the week.",
     patterns: [],
     totalTime: "PT5M",
     stepsHeading: "Build a daily vitamin habit in 6 steps",
@@ -850,7 +850,7 @@ export const GUIDES: Guide[] = [
       { name: "Place them where you'll see them", time: "1 min", text: "Next to the coffee maker, on the bathroom counter by your toothbrush, or on the kitchen table where you eat breakfast. Out of sight is out of mind." },
       { name: "Use a pill organizer", time: "2 min once a week", text: "Fill a seven-day organizer once a week (Sunday night works for many people). Each empty slot is a visual check that you took today's dose. You won't have to open bottles and guess." },
       { name: "Stack it with an existing habit", time: "1 min", text: "After I pour my coffee, I take my vitamins. After I brush my teeth, I take my vitamins. The habit you already do every day becomes the cue." },
-      { name: "Set one reminder", time: "30 sec", text: "Same time every day, at the moment you chose. If you took them already, dismiss it. If you forgot, the nudge catches you before the day is over." },
+      { name: "Set a Birch reminder", time: "30 sec", text: "In Birch, set a push notification reminder at your chosen time—same time every day. When it arrives, take your vitamins and check off the habit. The reminder nudge catches you before the day is over." },
       { name: "Log it immediately", time: "5 sec", text: "Check it off right after you swallow them, while the bottle or organizer is still in your hand. On Apple Watch, one tap. That instant confirmation helps the habit stick." },
     ],
     sections: [
@@ -899,13 +899,13 @@ export const GUIDES: Guide[] = [
         id: "with-birch",
         heading: "Tracking vitamins in Birch",
         body: [
-          "Add a vitamins habit in Birch and check it off each day on iPhone or Apple Watch. Set a reminder at your chosen time. Your streak, weekly completion, and monthly view show on one screen with your other small daily habits. Update a recent day if you forgot to log it. Free, no ads, no account.",
+          "Add a vitamins habit in Birch and set a push notification reminder at your chosen time. When the notification arrives, take your vitamins and check off the habit on iPhone or Apple Watch. Your streak, weekly completion, and monthly view show on one screen with your other small daily habits. Update a recent day if you forgot to log it. Free, no ads, no account.",
         ],
       },
     ],
     faqs: [
       ["What is the best time of day to take vitamins?", "Morning with food works for most people because it's part of a predictable routine. Some vitamins (like D) are better absorbed with fat, and some (like iron) are better on an empty stomach. Check your label or ask your pharmacist. Once you pick a time, keep it the same every day so it becomes automatic."],
-      ["How do I stop forgetting my vitamins?", "Put them somewhere you see them every morning (next to the coffee maker or toothbrush), use a seven-day pill organizer, set a daily reminder, and log them immediately after you take them. Habit stacking works: \"After I pour coffee, I take my vitamins.\""],
+      ["How do I stop forgetting my vitamins?", "Put them somewhere you see them every morning (next to the coffee maker or toothbrush), use a seven-day pill organizer, set a Birch push notification reminder at your chosen time, and log them immediately after you take them in Birch. Habit stacking works: \"After I pour coffee, I take my vitamins.\""],
       ["What if I miss a day?", "Take the next dose at the regular time. Don't double up unless the label or your doctor specifically says to. One missed day doesn't undo the habit—just pick it back up."],
       ["Should I use a pill organizer?", "Yes. It's the easiest way to see at a glance whether you took today's dose, and filling it once a week is faster than opening bottles every morning."],
       ["Is there a free vitamin tracker for Apple Watch?", "Birch is free for iPhone and Apple Watch. Log vitamins with one tap, set a daily reminder, see your streak and weekly pattern, and track them alongside water, breathing, and other small habits. No ads, no subscription, no account."],
@@ -926,7 +926,7 @@ export const GUIDES: Guide[] = [
     kicker: "Guide · Habit building",
     query: "how to make walking a habit",
     answer:
-      "To make walking a daily habit, pick a set time (morning, lunch, or evening), choose a simple route you can do without planning, set a daily reminder, start with 10 minutes, and log each walk right after. Birch lets you check off your walk with one tap on Apple Watch and shows your streak across the week.",
+      "To make walking a daily habit, pick a set time (morning, lunch, or evening), choose a simple route you can do without planning, set a Birch push notification reminder at that time, start with 10 minutes, and log each walk right after. Birch lets you check off your walk with one tap on Apple Watch and shows your streak across the week.",
     patterns: [],
     totalTime: "PT10M",
     stepsHeading: "Build a daily walk habit in 6 steps",
@@ -934,9 +934,9 @@ export const GUIDES: Guide[] = [
       { name: "Pick your time slot", time: "2 min", text: "Morning before work, lunch break, or evening after dinner. Pick the slot you're most likely to be able to walk, and keep it the same every day. Consistency is easier than motivation." },
       { name: "Choose a default route", time: "5 min", text: "Around the block, to the end of the street and back, or a loop you already know. A route you don't have to think about removes one decision. You can vary it later; for now, keep it simple." },
       { name: "Start small: 10 minutes", time: "10 min", text: "Ten minutes is enough to form the habit. You can walk farther once it feels automatic. Small and daily beats long and rare." },
-      { name: "Set a daily reminder", time: "30 sec", text: "At the start of your chosen time slot. When the reminder goes off, put on your shoes and go. The reminder is the cue; the walk is the response." },
+      { name: "Set a Birch reminder", time: "30 sec", text: "In Birch, set a push notification reminder at the start of your chosen time slot. When the notification arrives, put on your shoes and go. The Birch reminder is your cue; the walk is the response." },
       { name: "Log it right after", time: "5 sec", text: "As soon as you're back, mark it done. On Apple Watch, one tap. Logging it immediately reinforces the habit and lets you see your streak build." },
-      { name: "Review weekly", time: "1 min", text: "At the end of the week, look at which days you walked. If you missed the same day each week, move the reminder or pick a different time for that day." },
+      { name: "Review weekly", time: "1 min", text: "At the end of the week, look at which days you walked in Birch. If you missed the same day each week, adjust your Birch reminder time or pick a different time for that day." },
     ],
     sections: [
       {
@@ -984,14 +984,14 @@ export const GUIDES: Guide[] = [
         id: "with-birch",
         heading: "Tracking walks in Birch",
         body: [
-          "Add a walk habit in Birch and check it off each day. Set a reminder at your chosen time. See your daily streak, weekly completion, and how many days you walked this month, on the same screen as your breathing and other small habits. Update a recent day if you forgot to log it. On Apple Watch, one tap after your walk logs it. Free, no ads, no account.",
+          "Add a walk habit in Birch and set a push notification reminder at your chosen time. When the notification arrives, put on your shoes and go. Check off the habit after your walk. See your daily streak, weekly completion, and how many days you walked this month, on the same screen as your breathing and other small habits. Update a recent day if you forgot to log it. On Apple Watch, one tap logs it. Free, no ads, no account.",
         ],
       },
     ],
     faqs: [
       ["How long should I walk every day?", "Start with 10 minutes. The American College of Sports Medicine recommends at least 150 minutes of moderate activity per week for most adults—about 20 to 30 minutes most days. Build up as the habit gets easier."],
       ["What time of day is best for walking?", "Whichever time you'll actually keep. Morning walkers often find it easier to stay consistent because the day hasn't filled up yet. Lunch and evening work too—just pick one slot and keep it."],
-      ["How do I make myself walk every day?", "Pick a set time, choose a simple route, set a daily reminder, start with 10 minutes, and log it right after. Habit stacking helps: \"After I finish breakfast, I walk.\" The routine makes it automatic."],
+      ["How do I make myself walk every day?", "Pick a set time, choose a simple route, set a Birch push notification reminder at that time, start with 10 minutes, and log it in Birch right after. Habit stacking helps: \"After I finish breakfast, I walk.\" The routine makes it automatic."],
       ["Can I pair walking with breathing exercises?", "Yes. Once your stride is steady, try a minute of slow breathing (4-6 or 6-6) while you walk. It makes the walk more mindful. Birch has breathing you can start from Apple Watch without breaking your stride."],
       ["Is there a free walking habit tracker for Apple Watch?", "Birch is free for iPhone and Apple Watch. Log your walk with one tap, set a daily reminder, see your streak and monthly total, and track it alongside breathing and other daily habits. No ads, no subscription, no account."],
     ],
@@ -1018,7 +1018,7 @@ export const GUIDES: Guide[] = [
     steps: [
       { name: "Follow your prescription", time: "1 min", text: "Take the exact dose your doctor or pharmacist prescribed, at the times they specified. If anything is unclear, ask your pharmacist before you start." },
       { name: "Use a seven-day pill organizer", time: "5 min once a week", text: "Fill it once a week. Each empty compartment is a visual check that you took today's dose. Mark each compartment with the time if you take meds more than once a day." },
-      { name: "Set a reminder at the exact time", time: "1 min", text: "Set a push notification reminder for the exact time you should take it. If you need something harder to dismiss, use your phone's alarm app instead of (or in addition to) a notification. If you take meds twice a day, set two." },
+      { name: "Set a Birch reminder", time: "1 min", text: "Add a medication habit in Birch and set a push notification reminder for the exact time you should take it. When the notification arrives, take your medication and check off the habit in Birch. If you take meds twice a day, set two reminders. (Optional: if you need something harder to dismiss, also set an OS alarm in your phone's Clock app.)" },
       { name: "Keep it where you'll be", time: "1 min", text: "If you take it at breakfast, keep it on the kitchen counter. If you take it at bedtime, keep it on your nightstand. The location is a cue." },
       { name: "Stack it with an existing habit", time: "1 min", text: "After I pour my coffee, I take my medication. After I brush my teeth at night, I take my medication. The habit you already do becomes the trigger." },
       { name: "Log it immediately", time: "5 sec", text: "Check it off right after you take it. On Apple Watch, one tap. If you missed a dose, follow your pharmacist's or doctor's instructions—don't just double the next one." },
@@ -1050,7 +1050,7 @@ export const GUIDES: Guide[] = [
         id: "mistakes",
         heading: "Common mistakes",
         bullets: [
-          "**No reminder at all.** Use your habit tracker's push notification reminder, or if you need something harder to dismiss, set an OS alarm in your phone's Clock app.",
+          "**No Birch reminder.** Set a push notification reminder in Birch at your medication time. If you need something harder to dismiss, also set an OS alarm in your phone's Clock app.",
           "**No pill organizer.** Without one, you'll spend time every day opening the bottle and wondering if you already took it. An empty compartment is instant confirmation.",
           "**Keeping meds out of sight.** If it's in a closed cabinet, you'll forget. Keep it where you'll see it at the time you're supposed to take it.",
           "**Doubling up without asking.** If you miss a dose, ask your pharmacist what to do. Never assume it's safe to take two.",
@@ -1070,12 +1070,12 @@ export const GUIDES: Guide[] = [
         id: "with-birch",
         heading: "Tracking simple medication routines in Birch",
         body: [
-          "If your medication is one daily dose at the same time, you can add it as a yes/no habit in Birch and set a push notification reminder at the exact time. Check off the habit in Birch right after you take it. See your streak, weekly completion, and monthly view on one screen with other small daily habits. If you need something harder to dismiss than a push notification, also set an OS alarm in your phone's Clock app. For more complex schedules, ask your pharmacist to recommend a medication-specific app. Birch is free, no ads, no account.",
+          "If your medication is one daily dose at the same time, add it as a yes/no habit in Birch and set a push notification reminder at the exact time. When the notification arrives, take your medication and check off the habit. See your streak, weekly completion, and monthly view on one screen with other small daily habits. (Optional: if you need something harder to dismiss than a push notification, also set an OS alarm in your phone's Clock app.) For more complex schedules, ask your pharmacist to recommend a medication-specific app. Birch is free, no ads, no account.",
         ],
       },
     ],
     faqs: [
-      ["How do I remember to take my medication every day?", "Use a seven-day pill organizer, set a reminder (push notification or OS alarm) at the exact time, keep the medication visible where you'll be at that time, and check it off immediately after you take it. Habit stacking helps: \"After I pour my coffee, I take my medication.\""],
+      ["How do I remember to take my medication every day?", "Use a seven-day pill organizer, set a push notification reminder in Birch at the exact time, keep the medication visible where you'll be at that time, and check it off immediately after you take it in Birch. (Optional: also set an OS alarm if you need something harder to dismiss.) Habit stacking helps: \"After I pour my coffee, I take my medication.\""],
       ["What should I do if I miss a dose?", "Ask your pharmacist or check the information that came with your prescription. Some medications you take as soon as you remember; others you skip and take the next dose at the regular time. Don't double up unless you've been told it's safe."],
       ["Is Birch a medication reminder app?", "No. Birch is a simple habit tracker for daily yes/no habits. It has no medication database, no dose schedules, and no refill tracking. If your medication is one daily dose at the same time, Birch can help you track the habit with a push notification reminder and streak tracking, but it's not a substitute for a medication-specific app or your pharmacist's guidance."],
       ["Can I track multiple medications in Birch?", "Birch is built for simple daily habits, not complex medication schedules. If you take several medications at different times or doses, ask your pharmacist to recommend a medication reminder app. If you take a few once-a-day meds at the same time, you could track them as one combined habit in Birch."],
@@ -1097,7 +1097,7 @@ export const GUIDES: Guide[] = [
     kicker: "Guide · Habit building",
     query: "how to make stretching a habit",
     answer:
-      "To make stretching a daily habit, pick a set time (morning or evening), choose three to five stretches you can do without looking anything up, set a daily reminder, start with 5 minutes, and check it off right after. Birch lets you log stretching with one tap on Apple Watch and shows your streak across the week.",
+      "To make stretching a daily habit, pick a set time (morning or evening), choose three to five stretches you can do without looking anything up, set a Birch push notification reminder at that time, start with 5 minutes, and check it off right after. Birch lets you log stretching with one tap on Apple Watch and shows your streak across the week.",
     patterns: [],
     totalTime: "PT5M",
     stepsHeading: "Build a daily stretching habit in 6 steps",
@@ -1106,7 +1106,7 @@ export const GUIDES: Guide[] = [
       { name: "Choose a short routine", time: "5 min", text: "Three to five stretches you already know: neck rolls, shoulder shrugs, hamstring stretch, cat-cow, whatever feels good. Write them down or keep a photo. A routine you don't have to look up is easier to keep." },
       { name: "Start with 5 minutes", time: "5 min", text: "Hold each stretch for 15 to 30 seconds, breathe slowly, and don't bounce. Five minutes is enough to form the habit. Add time or stretches later." },
       { name: "Stack it with an existing habit", time: "1 min", text: "After I get out of bed, I stretch. After I finish my last work call, I stretch. After I brush my teeth at night, I stretch. The habit you already do becomes the cue." },
-      { name: "Set a daily reminder", time: "30 sec", text: "At the start of your chosen time. When it goes off, get on the floor and start. The reminder is the nudge; the stretching is the response." },
+      { name: "Set a Birch reminder", time: "30 sec", text: "In Birch, set a push notification reminder at the start of your chosen time. When the notification arrives, get on the floor and start. The Birch reminder is the nudge; the stretching is the response." },
       { name: "Log it immediately", time: "5 sec", text: "Right after you finish, mark it done. On Apple Watch, one tap. Seeing the streak build makes it easier to keep going." },
     ],
     sections: [
@@ -1156,14 +1156,14 @@ export const GUIDES: Guide[] = [
         id: "with-birch",
         heading: "Tracking stretching in Birch",
         body: [
-          "Add a stretching habit in Birch and check it off each day. Set a reminder at your chosen time. See your streak, weekly completion, and monthly total on one screen with breathing and other small daily habits. On Apple Watch, one tap logs it. Free, no ads, no account.",
+          "Add a stretching habit in Birch and set a push notification reminder at your chosen time. When the notification arrives, get on the floor and stretch. Check off the habit right after. See your streak, weekly completion, and monthly total on one screen with breathing and other small daily habits. On Apple Watch, one tap logs it. Free, no ads, no account.",
         ],
       },
     ],
     faqs: [
       ["How long should I stretch every day?", "Start with 5 minutes. Hold each stretch for 15 to 30 seconds and breathe slowly. Once the habit is solid, you can add time or stretches."],
       ["What time of day is best for stretching?", "Morning or evening, whichever you'll keep. Morning stretching can loosen you up after sleep. Evening stretching can be part of a wind-down. Pick one slot and stick with it."],
-      ["How do I make myself stretch every day?", "Pick a set time, choose a short routine (three to five stretches), set a daily reminder, and log it right after. Habit stacking helps: \"After I get out of bed, I stretch.\" Keep it simple and the same every day."],
+      ["How do I make myself stretch every day?", "Pick a set time, choose a short routine (three to five stretches), set a Birch push notification reminder at that time, and log it in Birch right after. Habit stacking helps: \"After I get out of bed, I stretch.\" Keep it simple and the same every day."],
       ["Can I pair stretching with breathing exercises?", "Yes. After you stretch, stay on the floor and do a minute of slow breathing (4-6 or 4-7-8). It's a natural combination: stretching loosens, breathing settles. Birch has both on one screen."],
       ["Is there a free stretching habit tracker for Apple Watch?", "Birch is free for iPhone and Apple Watch. Log stretching with one tap, set a daily reminder, see your streak and monthly total, and track it alongside breathing and other habits. No ads, no subscription, no account."],
     ],
@@ -1183,12 +1183,12 @@ export const GUIDES: Guide[] = [
     kicker: "Guide · Habit building",
     query: "bedtime routine for adults",
     answer:
-      "A simple bedtime routine for adults: set a consistent bedtime, dim the lights 30 to 60 minutes before, put your phone face down or out of reach, do a few minutes of slow breathing (4-7-8, 7-11, or 4-6), and get into bed. Birch lets you log a bedtime routine habit and track breathing sessions from Apple Watch in the dark.",
+      "A simple bedtime routine for adults: set a consistent bedtime with a Birch wind-down reminder 30 to 60 minutes before, dim the lights when the notification arrives, put your phone face down or out of reach, do a few minutes of slow breathing (4-7-8, 7-11, or 4-6), and get into bed. Birch lets you log a bedtime routine habit and track breathing sessions from Apple Watch in the dark.",
     patterns: ["weil", "wave", "slow"],
     totalTime: "PT30M",
     stepsHeading: "A simple bedtime routine in 5 steps",
     steps: [
-      { name: "Set a consistent bedtime", time: "1 min", text: "Pick a time you can realistically be in bed most nights, and set a reminder 30 to 60 minutes before. That's your wind-down cue." },
+      { name: "Set a Birch wind-down reminder", time: "1 min", text: "Pick a bedtime you can realistically keep most nights. In Birch, add a bedtime routine habit and set a push notification reminder 30 to 60 minutes before. When the notification arrives, that's your wind-down cue." },
       { name: "Dim the lights", time: "5 sec", text: "When the reminder goes off, turn off bright overhead lights. Use a lamp or dim setting. Lower light helps signal that the day is ending." },
       { name: "Put devices down", time: "1 min", text: "Phone face down or in another room, laptop closed, TV off. If you must check something, do it now, then put it away. Screens close to bedtime make it harder to wind down." },
       { name: "Do a short breathing session", time: "3–5 min", text: "In bed, with the lights already low. Try [4-7-8](/guides/4-7-8-breathing) for four breaths, [7-11](/guides/7-11-breathing) for a few minutes, or [4-6](/guides/4-6-breathing). Follow a pacer or haptic cue on Apple Watch so you can keep your eyes closed." },
@@ -1226,7 +1226,7 @@ export const GUIDES: Guide[] = [
         id: "mistakes",
         heading: "Common mistakes",
         bullets: [
-          "**No set bedtime.** \"Whenever I'm tired\" is too vague. Pick a time and set a wind-down reminder 30 to 60 minutes before.",
+          "**No set bedtime.** \"Whenever I'm tired\" is too vague. Pick a time and set a Birch wind-down reminder 30 to 60 minutes before.",
           "**Doing the breathing on a bright screen.** Use haptics or audio. Birch's Apple Watch app taps your wrist for each breath, so your eyes stay closed.",
           "**Checking your phone \"one last time.** That one check turns into ten minutes. Put it down when the wind-down starts, not when you're in bed.",
           "**Changing the routine every night.** The repetition is part of the signal. Keep the same steps in the same order.",
@@ -1244,7 +1244,7 @@ export const GUIDES: Guide[] = [
         id: "with-birch",
         heading: "Tracking a bedtime routine in Birch",
         body: [
-          "Add a bedtime routine habit in Birch (yes/no or a custom name) and check it off each night. Set a reminder at your wind-down time. When it's time for breathing, start a session from Apple Watch without turning on a screen. See your routine streak, weekly completion, and monthly view alongside other small daily habits. Free, no ads, no account.",
+          "Add a bedtime routine habit in Birch (yes/no or a custom name) and set a push notification reminder at your wind-down time. When the notification arrives, dim the lights and start your routine. Check off the habit each night. When it's time for breathing, start a session from Apple Watch without turning on a screen. See your routine streak, weekly completion, and monthly view alongside other small daily habits. Free, no ads, no account.",
         ],
       },
     ],
@@ -1253,7 +1253,7 @@ export const GUIDES: Guide[] = [
       ["How long should a bedtime routine take?", "30 to 60 minutes from wind-down cue to lights out. The breathing part is just a few minutes. The rest is dimming lights and putting devices away. You don't need an hour-long ritual; you need consistency."],
       ["What breathing exercise is best for sleep?", "4-7-8 (four breaths, about a minute), 7-11 (longer exhale, a few minutes), or 4-6 (simple and easy to keep up). All have a long exhale. Pick the one that feels easiest in bed. See [breathing for sleep](/guides/breathing-exercises-for-sleep)."],
       ["Should I do breathing exercises before bed every night?", "If it helps you wind down, yes. A few minutes of slow breathing as part of a bedtime routine can signal that it's time to sleep. It's not a substitute for treating a sleep problem, but it's a low-effort addition to a wind-down."],
-      ["Is there a free bedtime routine tracker for Apple Watch?", "Birch is free for iPhone and Apple Watch. Log a bedtime routine habit with one tap, set a reminder at your wind-down time, and start breathing sessions from your wrist in the dark with haptic cues. See your streak and weekly pattern alongside other habits. No ads, no subscription, no account."],
+      ["Is there a free bedtime routine tracker for Apple Watch?", "Birch is free for iPhone and Apple Watch. Log a bedtime routine habit with one tap, set a push notification reminder at your wind-down time, and start breathing sessions from your wrist in the dark with haptic cues. See your streak and weekly pattern alongside other habits. No ads, no subscription, no account."],
     ],
     sources: [S.sleepfdn_routine, S.sleepfdn, S.clear],
     related: ["breathing-exercises-for-sleep", "4-7-8-breathing", "daily-breathing-habit"],
