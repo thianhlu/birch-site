@@ -11,7 +11,7 @@ import { GUIDES } from "./guides/data";
 import { trackAppStoreClick } from "./PostHogProvider";
 
 const RATING = "4.9";
-const RATING_COUNT = "115";
+const RATING_COUNT = "117";
 
 const habits = [
   ["💧", "Drink water", "Count"],
@@ -36,7 +36,7 @@ const quotes = [
   "perfect. dont change.",
   "Does what it says on the tin. Perfect.",
   "Love the simplicity",
-  "Simple, ad free.",
+  "so nice to be able to do guided breathing on the watch now",
 ];
 
 const faqs = [
