@@ -250,11 +250,21 @@ export default async function GuidePage({ params }: Props) {
 
           <section className="final guide-final" aria-labelledby="cta-h">
             <header className="section-head">
-              <h2 id="cta-h" className="display">Breathe along with Birch</h2>
+              <h2 id="cta-h" className="display">{patterns.length > 0 ? "Breathe along with Birch" : "Build habits with Birch"}</h2>
               <p>
-                Birch paces {patterns.length === 1 ? patterns[0].name : "every pattern on this page"} for you on iPhone,
-                and on Apple Watch with gentle haptic cues, so you can keep your eyes closed. Keep small daily
-                habits beside your breathing. Free, with no ads, no account, and no subscription.
+                {patterns.length > 0 ? (
+                  <>
+                    Birch paces {patterns.length === 1 ? patterns[0].name : "every pattern on this page"} for you on iPhone,
+                    and on Apple Watch with gentle haptic cues, so you can keep your eyes closed. Keep small daily
+                    habits beside your breathing. Free, with no ads, no account, and no subscription.
+                  </>
+                ) : (
+                  <>
+                    Birch helps you track small daily habits like water, vitamins, walks, and stretching on iPhone and
+                    Apple Watch. Set gentle reminders, see your streaks, and keep breathing sessions beside your habits
+                    on one screen. Free, with no ads, no account, and no subscription.
+                  </>
+                )}
               </p>
               <StoreBadge location="guide_final_cta" guideSlug={g.slug} />
             </header>

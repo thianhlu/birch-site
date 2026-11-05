@@ -1,4 +1,5 @@
-import { SITE, APP } from "../components/Chrome";
+import { SITE } from "../site";
+import { APP } from "../components/Chrome";
 import { GUIDES, GUIDES_INDEX, plain, type Guide } from "./data";
 import { PATTERNS } from "./patterns";
 

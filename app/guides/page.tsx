@@ -52,8 +52,8 @@ export default function GuidesIndex() {
           <div className="ihero-frame">
             <Image
               className="ihero-bg"
-              src="/photos/guides/index.webp"
-              alt="A sunlit path through a birch grove"
+              src="/photos/sky.webp"
+              alt="A calm sky with soft clouds above birch trees"
               fill
               priority
               sizes="100vw"
