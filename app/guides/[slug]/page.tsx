@@ -100,9 +100,11 @@ export default async function GuidePage({ params }: Props) {
               />
               <span className="float-chip gchip-1">{v.chips[0]}</span>
               <span className={`float-chip gchip-2${isWatch ? " is-req" : ""}`}>{v.chips[1]}</span>
-              <div className="guide-pacer">
-                <BreathPacer patterns={patterns} />
-              </div>
+              {patterns.length > 0 && (
+                <div className="guide-pacer">
+                  <BreathPacer patterns={patterns} />
+                </div>
+              )}
             </aside>
           </div>
         </div>
@@ -115,19 +117,21 @@ export default async function GuidePage({ params }: Props) {
                 <span className="eyebrow">Step by step</span>
                 <h2 id="steps-h">{g.stepsHeading}</h2>
               </header>
-              <div className="rhythm">
-                {patterns.map((p) => (
-                  <div className="rhythm-row" key={p.id}>
-                    <div className="rhythm-meta">
-                      <strong>{p.name}</strong>
-                      <span>
-                        {breathSecs(p)} s per breath · about {perMinute(p)} a minute
-                      </span>
+              {patterns.length > 0 && (
+                <div className="rhythm">
+                  {patterns.map((p) => (
+                    <div className="rhythm-row" key={p.id}>
+                      <div className="rhythm-meta">
+                        <strong>{p.name}</strong>
+                        <span>
+                          {breathSecs(p)} s per breath · about {perMinute(p)} a minute
+                        </span>
+                      </div>
+                      <PhaseBar pattern={p} />
                     </div>
-                    <PhaseBar pattern={p} />
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
               <ol className="steps">
                 {g.steps.map((s, i) => (
                   <li key={s.name} id={`step-${i + 1}`}>
@@ -246,11 +250,21 @@ export default async function GuidePage({ params }: Props) {
 
           <section className="final guide-final" aria-labelledby="cta-h">
             <header className="section-head">
-              <h2 id="cta-h" className="display">Breathe along with Birch</h2>
+              <h2 id="cta-h" className="display">{patterns.length > 0 ? "Breathe along with Birch" : "Build habits with Birch"}</h2>
               <p>
-                Birch paces {patterns.length === 1 ? patterns[0].name : "every pattern on this page"} for you on iPhone,
-                and on Apple Watch with gentle haptic cues, so you can keep your eyes closed. Keep small daily
-                habits beside your breathing. Free, with no ads, no account, and no subscription.
+                {patterns.length > 0 ? (
+                  <>
+                    Birch paces {patterns.length === 1 ? patterns[0].name : "every pattern on this page"} for you on iPhone,
+                    and on Apple Watch with gentle haptic cues, so you can keep your eyes closed. Keep small daily
+                    habits beside your breathing. Free, with no ads, no account, and no subscription.
+                  </>
+                ) : (
+                  <>
+                    Birch helps you track small daily habits like water, vitamins, walks, and stretching on iPhone and
+                    Apple Watch. Set gentle reminders, see your streaks, and keep breathing sessions beside your habits
+                    on one screen. Free, with no ads, no account, and no subscription.
+                  </>
+                )}
               </p>
               <StoreBadge location="guide_final_cta" guideSlug={g.slug} />
             </header>
