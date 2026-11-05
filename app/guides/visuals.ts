@@ -15,8 +15,8 @@ export type GuideVisual = {
 
 const V: Record<string, GuideVisual> = {
   "4-7-8-breathing": {
-    photo: "/photos/guides/4-7-8-breathing.webp",
-    alt: "A woman sitting on her bed in warm lamplight, eyes closed, one hand on her chest",
+    photo: "/photos/bed.webp",
+    alt: "A peaceful bedroom scene with soft bedding in warm lamplight",
     tone: "#f4e6dc",
     ink: "#8a4b2a",
     phone: "breathe",
@@ -35,15 +35,14 @@ const V: Record<string, GuideVisual> = {
     chips: ["In 4 · Hold 4 · Out 4 · Hold 4", "A steady daytime reset"],
   },
   "7-11-breathing": {
-    photo: "/photos/guides/7-11-breathing.webp",
-    alt: "A woman lying on a woven rug in afternoon light, hands resting on her belly",
+    photo: "/photos/sky.webp",
+    alt: "A calm sky with soft clouds, suggesting slow, gentle breathing",
     tone: "#efe7d6",
     ink: "#7a5a1e",
     phone: "breathe",
     watch: "breathing",
     quote: "The long, unhurried out-breath is the core of it.",
     chips: ["In 7 · Out 11", "No holds"],
-    dock: "start",
   },
   "coherent-breathing": {
     photo: "/photos/guides/coherent-breathing.webp",
@@ -66,8 +65,8 @@ const V: Record<string, GuideVisual> = {
     chips: ["In 4 · Out 6", "6 breaths a minute"],
   },
   "breathing-exercises-for-sleep": {
-    photo: "/photos/guides/breathing-exercises-for-sleep.webp",
-    alt: "A woman lying in bed at night under a linen duvet, a warm lamp beside her",
+    photo: "/photos/night.webp",
+    alt: "A peaceful evening scene with soft lighting, perfect for bedtime wind-down",
     tone: "#e6e3f3",
     ink: "#4b3f8f",
     phone: "breathe",
@@ -86,8 +85,8 @@ const V: Record<string, GuideVisual> = {
     chips: ["Six patterns on your wrist", "Requires watchOS 11 or later"],
   },
   "daily-breathing-habit": {
-    photo: "/photos/guides/daily-breathing-habit.webp",
-    alt: "A woman at a sunny kitchen counter with a glass of water and an open notebook, eyes closed",
+    photo: "/photos/flatlay.webp",
+    alt: "A peaceful flatlay with tea, notebook, and daily essentials on a table",
     tone: "#f3ecd4",
     ink: "#7a5a1e",
     phone: "habits",
@@ -146,8 +145,8 @@ const V: Record<string, GuideVisual> = {
     chips: ["5 minutes to start", "Stretch + breathe"],
   },
   "bedtime-routine-for-adults": {
-    photo: "/photos/night.webp",
-    alt: "A peaceful evening scene with soft lighting, perfect for wind-down",
+    photo: "/photos/guides/breathing-exercises-for-sleep.webp",
+    alt: "A cozy bedroom scene with warm lamplight, inviting nighttime wind-down",
     tone: "#e6e3f3",
     ink: "#4b3f8f",
     phone: "reminders",
