@@ -421,6 +421,8 @@ footer .links { display: flex; gap: 18px; }
 .gdevice-copy .store-badge { margin-top: 28px; text-decoration: none; }
 .gdevice-art { position: relative; align-self: stretch; min-height: 540px; }
 .gd-phone { position: absolute; width: 260px; left: 50%; top: 0; transform: translateX(-72%) rotate(-5deg); transform-origin: 50% 0; }
+/* Lighten heavy bottom gradient on phone mockups so UI stays visible */
+.gd-phone::after { content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 35%; background: linear-gradient(to top, rgba(255, 255, 255, .45), transparent); pointer-events: none; border-radius: 0 0 46px 46px; }
 .gd-watch { position: absolute; width: 170px; left: 50%; top: 210px; transform: translateX(32%) rotate(7deg); z-index: 2; }
 .gdevice.is-dark { background: var(--dark); color: #fff; }
 .gdevice.is-dark .eyebrow { color: #bdf3cf; }
@@ -630,6 +632,7 @@ footer .links { display: flex; gap: 18px; }
   .gdevice-copy { padding-bottom: 0; }
   .gdevice-art { min-height: 380px; }
   .gd-phone { width: 190px; }
+  .gd-phone::after { height: 32%; }
   .gd-watch { width: 124px; top: 150px; }
   .gfaq { margin-top: 80px; padding: 0 16px; }
   .related { margin-top: 80px; }
