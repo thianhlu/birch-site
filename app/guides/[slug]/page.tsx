@@ -89,7 +89,7 @@ export default async function GuidePage({ params }: Props) {
                 By Birch · Updated <time dateTime={g.updated}>{fmtDate(g.updated)}</time>
               </p>
             </header>
-            <aside className={`ghero-visual${v.dock === "start" ? " dock-start" : ""}`} aria-label="Try it now">
+            <aside className={`ghero-visual${v.dock === "start" ? " dock-start" : ""}`} aria-label={patterns.length > 0 ? "Try it now" : undefined}>
               <Image
                 className="ghero-photo"
                 src={v.photo}
@@ -100,9 +100,11 @@ export default async function GuidePage({ params }: Props) {
               />
               <span className="float-chip gchip-1">{v.chips[0]}</span>
               <span className={`float-chip gchip-2${isWatch ? " is-req" : ""}`}>{v.chips[1]}</span>
-              <div className="guide-pacer">
-                <BreathPacer patterns={patterns} />
-              </div>
+              {patterns.length > 0 && (
+                <div className="guide-pacer">
+                  <BreathPacer patterns={patterns} />
+                </div>
+              )}
             </aside>
           </div>
         </div>
@@ -115,19 +117,21 @@ export default async function GuidePage({ params }: Props) {
                 <span className="eyebrow">Step by step</span>
                 <h2 id="steps-h">{g.stepsHeading}</h2>
               </header>
-              <div className="rhythm">
-                {patterns.map((p) => (
-                  <div className="rhythm-row" key={p.id}>
-                    <div className="rhythm-meta">
-                      <strong>{p.name}</strong>
-                      <span>
-                        {breathSecs(p)} s per breath · about {perMinute(p)} a minute
-                      </span>
+              {patterns.length > 0 && (
+                <div className="rhythm">
+                  {patterns.map((p) => (
+                    <div className="rhythm-row" key={p.id}>
+                      <div className="rhythm-meta">
+                        <strong>{p.name}</strong>
+                        <span>
+                          {breathSecs(p)} s per breath · about {perMinute(p)} a minute
+                        </span>
+                      </div>
+                      <PhaseBar pattern={p} />
                     </div>
-                    <PhaseBar pattern={p} />
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
               <ol className="steps">
                 {g.steps.map((s, i) => (
                   <li key={s.name} id={`step-${i + 1}`}>
