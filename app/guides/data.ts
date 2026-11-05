@@ -651,6 +651,131 @@ export const GUIDES: Guide[] = [
     updated: PUB,
   },
 
+  /* ------------------------------------------------- Build a Habit */
+  {
+    slug: "how-to-build-a-habit",
+    title: "How to Build a Daily Habit (Steps + Free Habit Tracker)",
+    description:
+      "How to start a daily habit and make it stick: tiny habits, habit stacking, reminders, streaks, and tracking. Free habit tracker for iOS and Apple Watch.",
+    h1: "How to build a daily habit",
+    kicker: "Guide · Habit building",
+    query: "how to build a daily habit",
+    answer:
+      "To build a daily habit, start tiny (one push-up, one glass of water), stack it right after something you already do every day, set a reminder as backup, and track your streaks. Make it so small it feels too easy to skip. The easier it is on day one, the more likely it becomes automatic.",
+    patterns: [],
+    totalTime: "PT2M",
+    stepsHeading: "Build a habit that sticks in 6 steps",
+    steps: [
+      { name: "Pick one small thing", time: "1 min", text: "Choose one habit you want to build. Just one. Make it tiny: one glass of water, one push-up, two minutes of reading. Small beats ambitious." },
+      { name: "Find an anchor", time: "1 min", text: "Pick something you already do every day at roughly the same time: pouring coffee, brushing teeth, sitting at your desk, getting into bed." },
+      { name: "Write the habit stack", time: "30 sec", text: "\"After I [anchor], I will [new habit].\" Example: \"After I pour my morning coffee, I will drink one glass of water.\" Be specific." },
+      { name: "Set a reminder", time: "30 sec", text: "Put a reminder at the anchor time as a safety net. The anchor is the main trigger, the reminder is backup." },
+      { name: "Track it", time: "10 sec", text: "Mark it done each day. Use an app, a calendar, a notebook, anything that lets you see your streak grow." },
+      { name: "Don't break the chain", time: "", text: "Miss one day? Fine. Miss two days in a row? That's where habits slip. Get back on track the next day." },
+    ],
+    sections: [
+      {
+        id: "what-it-is",
+        heading: "What a daily habit is",
+        body: [
+          "A daily habit is something you do every day, without thinking about it much, usually triggered by something else. Brushing your teeth after breakfast is a habit. Checking your phone when you wake up is a habit. A habit is automatic, not a decision.",
+          "Building a new daily habit means making a new behavior automatic. That takes repetition, a consistent trigger, and making it easy enough that you don't need willpower. Most advice says it takes 21 days to form a habit. That number is a myth, based on a misreading of old research. Real research (Lally et al., 2009) found it took anywhere from 18 to 254 days, with an average of 66 days. The simpler the habit, the faster it stuck.",
+        ],
+      },
+      {
+        id: "start-tiny",
+        heading: "Start tiny, really tiny",
+        body: [
+          "BJ Fogg's Tiny Habits research shows that starting small is the single best predictor of success. One push-up is better than ten. One glass of water is better than eight. Two minutes of reading is better than a chapter. You can always do more once you're there, but the habit is just showing up.",
+          "Why tiny works: it removes the friction. On a tired day, \"go to the gym for an hour\" feels impossible. \"Do one push-up\" does not. Once you've done the tiny version for a week or two, you can grow it. But most people start too big and quit.",
+        ],
+      },
+      {
+        id: "stacking",
+        heading: "Habit stacking: the easiest trigger",
+        body: [
+          "Habit stacking, described by James Clear and based on BJ Fogg's work, pairs your new habit with something you already do. The formula: **After [current habit], I will [new habit].**",
+        ],
+        bullets: [
+          "After I pour my morning coffee, I will drink one glass of water.",
+          "After I brush my teeth at night, I will do ten push-ups.",
+          "After I sit down at my desk, I will write one sentence in my journal.",
+          "After I get into bed, I will read for two minutes.",
+          "After I park the car at home, I will take five deep breaths before I go in.",
+        ],
+      },
+      {
+        id: "stacking-anchor",
+        heading: "Choose the right anchor",
+        body: [
+          "The anchor has to be something you already do at the same time every day. \"After I eat lunch\" is too vague because lunch moves around. \"After I close my laptop at the end of the work day\" is better. The more consistent the timing and location of your anchor, the more reliable your new habit becomes.",
+        ],
+      },
+      {
+        id: "reminders",
+        heading: "Reminders are backup, not the main trigger",
+        body: [
+          "Set a reminder at the time you chose, but don't rely on it as your only trigger. Reminders get dismissed. Anchors are automatic. Use the reminder to catch you on days when the routine changes. For habits tied to a fixed time (take vitamins at 8 AM), a reminder is the trigger. For everything else, the anchor does more of the work.",
+        ],
+      },
+      {
+        id: "tracking",
+        heading: "Track your streaks",
+        body: [
+          "Tracking makes progress visible. A streak is a simple count of consecutive days. Seeing \"12 days\" makes you want to see \"13 days.\" That's not gamification, it's feedback. You can track on paper (cross off each day on a calendar), in a notes app, or with a habit tracker.",
+          "What matters is that you can see your streak at a glance. Monthly summaries help too: \"I did this 24 out of 31 days in October\" is useful information. It shows you kept going even when some days got skipped.",
+        ],
+      },
+      {
+        id: "dont-break",
+        heading: "Don't break the chain (but one miss is fine)",
+        body: [
+          "The \"don't break the chain\" rule, popularized by a story about Jerry Seinfeld (whether true or not, the advice is sound), says to do the habit every single day and mark it on a calendar. Your only job is to not break the chain of X marks.",
+          "But here's the real rule: missing one day is normal. Life happens. Missing two days in a row is where habits die. If you miss a day, just do it the next day. Don't wait for Monday. Don't start over. Just pick it back up.",
+        ],
+      },
+      {
+        id: "mistakes",
+        heading: "Common mistakes",
+        bullets: [
+          "**Starting too big.** \"Exercise for an hour every day\" lasts a week. \"Do one push-up every day\" lasts.",
+          "**Picking five habits at once.** Pick one. When that one is automatic, add another.",
+          "**No clear anchor.** \"I'll do it sometime in the morning\" means you'll forget. \"After I pour my coffee\" means it happens.",
+          "**All-or-nothing thinking.** One missed day doesn't erase your progress. Two missed days in a row starts a new pattern of not doing it.",
+          "**Relying on motivation.** Motivation fades. A good anchor and a tiny habit don't need motivation.",
+        ],
+      },
+      {
+        id: "breathing",
+        heading: "Building a breathing habit",
+        body: [
+          "Breathing exercises are a good first habit because they're quick (one to five minutes), require no equipment, and can be done almost anywhere. The challenge is remembering to do them. Habit stacking solves that: \"After I get into bed, I will do [4-7-8 breathing](/guides/4-7-8-breathing) for four breaths.\" Or: \"After I sit down at my desk in the morning, I will do one minute of [box breathing](/guides/box-breathing).\"",
+          "See [how to build a daily breathing habit](/guides/daily-breathing-habit) for breathing-specific guidance.",
+        ],
+      },
+      {
+        id: "with-birch",
+        heading: "Track habits in Birch",
+        body: [
+          "Birch keeps daily habits beside your breathing. Log water, vitamins, reading, walking, fasting, meditation, or create your own with any emoji and color. Yes/no or a count, logged in one tap. Set gentle reminders at times you choose. See your streaks, weekly progress, and monthly summaries. Missed a day? Fill it in. Birch is free on iPhone and Apple Watch, with no ads, no account, and no subscription.",
+        ],
+      },
+    ],
+    faqs: [
+      ["How long does it take to build a daily habit?", "Research suggests an average of 66 days, with a wide range from 18 to 254 days depending on the habit and the person. Simpler habits (like drinking water) form faster than complex ones (like daily exercise). The \"21 days\" claim is a myth."],
+      ["What is habit stacking?", "Habit stacking means pairing a new habit with something you already do every day. The formula: \"After [current habit], I will [new habit].\" It's easier than trying to remember a habit out of nowhere."],
+      ["Should I track my habits?", "Yes. Tracking makes progress visible and builds momentum. A simple calendar with X marks for each day works. Apps like Birch show streaks, weekly progress, and monthly summaries in one place."],
+      ["What if I miss a day?", "Missing one day is fine. Just do it the next day. Don't wait for a fresh Monday or a new month. Missing two days in a row is where habits slip, so get back on track right away."],
+      ["How many habits should I start at once?", "One. When that one is automatic (you don't think about it anymore), add another. Most people who try to build five habits at once end up with zero habits."],
+      ["What is the best time of day to build a habit?", "The best time is whenever you already have a reliable anchor. Morning routines (after coffee, after brushing teeth) are popular because they're consistent. Bedtime routines work too. The anchor matters more than the clock time."],
+      ["Is Birch a good habit tracker?", "Birch is designed for small daily habits: yes/no or a count, with gentle reminders, streaks, and monthly summaries. It keeps your habits next to your breathing, both in one place, free with no ads or account."],
+    ],
+    sources: [S.clear, { label: "BJ Fogg — Tiny Habits: The Small Changes That Change Everything", url: "https://tinyhabits.com/" }, { label: "Lally et al., 2009. How are habits formed: Modelling habit formation in the real world. European Journal of Social Psychology", url: "https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674" }],
+    related: ["daily-breathing-habit"],
+    published: PUB,
+    updated: PUB,
+  },
+
   /* --------------------------------------------------------------- Habit */
   {
     slug: "daily-breathing-habit",
@@ -707,6 +832,13 @@ export const GUIDES: Guide[] = [
         ],
       },
       {
+        id: "general-habits",
+        heading: "Building any daily habit",
+        body: [
+          "This same approach works for any daily habit, not just breathing. See [how to build a habit](/guides/how-to-build-a-habit) for the complete method: starting tiny, choosing the right anchor, tracking streaks, and making it stick.",
+        ],
+      },
+      {
         id: "who-its-for",
         heading: "Who it's for",
         body: [
@@ -739,7 +871,7 @@ export const GUIDES: Guide[] = [
       ["Can I track breathing as a habit?", "Yes. Birch shows breathing sessions beside your daily habits across your week and month, with streaks and reminders."],
     ],
     sources: [S.weil, S.cc478, S.ccBox, S.sm711, S.nhs, S.ccDia, S.fincham, S.balban, S.clear],
-    related: ["4-7-8-breathing", "box-breathing", "breathing-exercises-for-sleep"],
+    related: ["4-7-8-breathing", "box-breathing", "how-to-build-a-habit"],
     published: PUB,
     updated: PUB,
   },
