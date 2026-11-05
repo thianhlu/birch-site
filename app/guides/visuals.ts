@@ -15,8 +15,8 @@ export type GuideVisual = {
 
 const V: Record<string, GuideVisual> = {
   "4-7-8-breathing": {
-    photo: "/photos/bed.webp",
-    alt: "A peaceful bedroom scene with soft bedding in warm lamplight",
+    photo: "/photos/guides/4-7-8-breathing.webp",
+    alt: "A woman sitting on her bed in warm lamplight, eyes closed, one hand on her chest",
     tone: "#f4e6dc",
     ink: "#8a4b2a",
     phone: "breathe",
@@ -65,8 +65,8 @@ const V: Record<string, GuideVisual> = {
     chips: ["In 4 · Out 6", "6 breaths a minute"],
   },
   "breathing-exercises-for-sleep": {
-    photo: "/photos/night.webp",
-    alt: "A peaceful evening scene with soft lighting, perfect for bedtime wind-down",
+    photo: "/photos/guides/breathing-exercises-for-sleep.webp",
+    alt: "A woman lying in bed at night under a linen duvet, a warm lamp beside her",
     tone: "#e6e3f3",
     ink: "#4b3f8f",
     phone: "breathe",
@@ -85,8 +85,8 @@ const V: Record<string, GuideVisual> = {
     chips: ["Six patterns on your wrist", "Requires watchOS 11 or later"],
   },
   "daily-breathing-habit": {
-    photo: "/photos/flatlay.webp",
-    alt: "A peaceful flatlay with tea, notebook, and daily essentials on a table",
+    photo: "/photos/wrist.webp",
+    alt: "A wrist with a watch in natural light, symbolizing daily breathing practice timing",
     tone: "#f3ecd4",
     ink: "#7a5a1e",
     phone: "habits",
@@ -145,8 +145,8 @@ const V: Record<string, GuideVisual> = {
     chips: ["5 minutes to start", "Stretch + breathe"],
   },
   "bedtime-routine-for-adults": {
-    photo: "/photos/guides/breathing-exercises-for-sleep.webp",
-    alt: "A cozy bedroom scene with warm lamplight, inviting nighttime wind-down",
+    photo: "/photos/bed.webp",
+    alt: "A peaceful bedroom with soft bedding and warm lighting, ready for wind-down",
     tone: "#e6e3f3",
     ink: "#4b3f8f",
     phone: "reminders",
