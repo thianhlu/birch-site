@@ -1006,19 +1006,19 @@ export const GUIDES: Guide[] = [
     slug: "how-to-remember-to-take-medication",
     title: "How to Remember to Take Your Medication Every Day",
     description:
-      "Six steps to make taking medication a daily habit: pill organizers, alarms, cues, and simple check-off tracking on Apple Watch with a free habit tracker.",
+      "Six steps to make taking medication a daily habit: pill organizers, reminders, cues, and simple check-off tracking on Apple Watch with a free habit tracker.",
     h1: "How to Remember to Take Your Medication Every Day",
     kicker: "Guide · Habit building",
     query: "how to remember to take medication",
     answer:
-      "To remember your medication, use a seven-day pill organizer, set an alarm at the exact time you should take it, keep it visible where you'll be at that time, stack it with a daily habit, and check it off immediately. Birch is not a medication app, but you can log a daily yes/no habit for medications with simple schedules and see your streak on Apple Watch.",
+      "To remember your medication, use a seven-day pill organizer, set a reminder (or an OS alarm if you need something harder to dismiss), keep it visible where you'll be at that time, stack it with a daily habit, and check it off immediately. Birch is not a medication app, but you can log a daily yes/no habit for medications with simple schedules, set a push notification reminder, and see your streak on Apple Watch.",
     patterns: [],
     totalTime: "PT5M",
     stepsHeading: "Build a medication routine in 6 steps",
     steps: [
       { name: "Follow your prescription", time: "1 min", text: "Take the exact dose your doctor or pharmacist prescribed, at the times they specified. If anything is unclear, ask your pharmacist before you start." },
       { name: "Use a seven-day pill organizer", time: "5 min once a week", text: "Fill it once a week. Each empty compartment is a visual check that you took today's dose. Mark each compartment with the time if you take meds more than once a day." },
-      { name: "Set an alarm (not just a reminder)", time: "1 min", text: "An alarm you have to dismiss, at the exact time you should take it. If you take meds twice a day, set two alarms. An alarm is harder to ignore than a notification." },
+      { name: "Set a reminder at the exact time", time: "1 min", text: "Set a push notification reminder for the exact time you should take it. If you need something harder to dismiss, use your phone's alarm app instead of (or in addition to) a notification. If you take meds twice a day, set two." },
       { name: "Keep it where you'll be", time: "1 min", text: "If you take it at breakfast, keep it on the kitchen counter. If you take it at bedtime, keep it on your nightstand. The location is a cue." },
       { name: "Stack it with an existing habit", time: "1 min", text: "After I pour my coffee, I take my medication. After I brush my teeth at night, I take my medication. The habit you already do becomes the trigger." },
       { name: "Log it immediately", time: "5 sec", text: "Check it off right after you take it. On Apple Watch, one tap. If you missed a dose, follow your pharmacist's or doctor's instructions—don't just double the next one." },
@@ -1029,7 +1029,7 @@ export const GUIDES: Guide[] = [
         heading: "What Birch is and isn't",
         body: [
           "Birch is a simple habit tracker for small daily yes/no habits, not a medication management app. It has no dose schedules, no refill tracking, no medication database, and no medical alerts. If your medication has a complex schedule (multiple times a day with different doses, or \"take as needed\"), Birch isn't built for that. For complex medication routines, ask your pharmacist or doctor to recommend a dedicated medication reminder app.",
-          "If your prescription is one simple daily dose (once a day, same time), Birch can help you track whether you took it, the same way it tracks any other yes/no habit. The check-off, reminder, and streak can support the routine. But all the medical decisions—what to take, when, how much, what to do if you miss a dose, when to refill—stay between you and your healthcare team. Birch doesn't give medical advice.",
+          "If your prescription is one simple daily dose (once a day, same time), Birch can help you track whether you took it, the same way it tracks any other yes/no habit. You can set a push notification reminder in Birch at your medication time. The check-off, reminder, and streak can support the routine. But all the medical decisions—what to take, when, how much, what to do if you miss a dose, when to refill—stay between you and your healthcare team. Birch doesn't give medical advice.",
         ],
       },
       {
@@ -1050,7 +1050,7 @@ export const GUIDES: Guide[] = [
         id: "mistakes",
         heading: "Common mistakes",
         bullets: [
-          "**Using a gentle notification instead of an alarm.** Notifications are easy to swipe away. An alarm you have to turn off is harder to ignore.",
+          "**No reminder at all.** Use your habit tracker's push notification reminder, or if you need something harder to dismiss, set an OS alarm in your phone's Clock app.",
           "**No pill organizer.** Without one, you'll spend time every day opening the bottle and wondering if you already took it. An empty compartment is instant confirmation.",
           "**Keeping meds out of sight.** If it's in a closed cabinet, you'll forget. Keep it where you'll see it at the time you're supposed to take it.",
           "**Doubling up without asking.** If you miss a dose, ask your pharmacist what to do. Never assume it's safe to take two.",
@@ -1070,14 +1070,14 @@ export const GUIDES: Guide[] = [
         id: "with-birch",
         heading: "Tracking simple medication routines in Birch",
         body: [
-          "If your medication is one daily dose at the same time, you can add it as a yes/no habit in Birch. Set an alarm (in your phone's Clock app) at the exact time, then check off the habit in Birch right after you take it. See your streak, weekly completion, and monthly view on one screen with other small daily habits. For more complex schedules, ask your pharmacist to recommend a medication-specific app. Birch is free, no ads, no account.",
+          "If your medication is one daily dose at the same time, you can add it as a yes/no habit in Birch and set a push notification reminder at the exact time. Check off the habit in Birch right after you take it. See your streak, weekly completion, and monthly view on one screen with other small daily habits. If you need something harder to dismiss than a push notification, also set an OS alarm in your phone's Clock app. For more complex schedules, ask your pharmacist to recommend a medication-specific app. Birch is free, no ads, no account.",
         ],
       },
     ],
     faqs: [
-      ["How do I remember to take my medication every day?", "Use a seven-day pill organizer, set an alarm (not just a reminder) at the exact time, keep the medication visible where you'll be at that time, and check it off immediately after you take it. Habit stacking helps: \"After I pour my coffee, I take my medication.\""],
+      ["How do I remember to take my medication every day?", "Use a seven-day pill organizer, set a reminder (push notification or OS alarm) at the exact time, keep the medication visible where you'll be at that time, and check it off immediately after you take it. Habit stacking helps: \"After I pour my coffee, I take my medication.\""],
       ["What should I do if I miss a dose?", "Ask your pharmacist or check the information that came with your prescription. Some medications you take as soon as you remember; others you skip and take the next dose at the regular time. Don't double up unless you've been told it's safe."],
-      ["Is Birch a medication reminder app?", "No. Birch is a simple habit tracker for daily yes/no habits. It has no medication database, no dose schedules, and no refill tracking. If your medication is one daily dose at the same time, Birch can help you track the habit, but it's not a substitute for a medication-specific app or your pharmacist's guidance."],
+      ["Is Birch a medication reminder app?", "No. Birch is a simple habit tracker for daily yes/no habits. It has no medication database, no dose schedules, and no refill tracking. If your medication is one daily dose at the same time, Birch can help you track the habit with a push notification reminder and streak tracking, but it's not a substitute for a medication-specific app or your pharmacist's guidance."],
       ["Can I track multiple medications in Birch?", "Birch is built for simple daily habits, not complex medication schedules. If you take several medications at different times or doses, ask your pharmacist to recommend a medication reminder app. If you take a few once-a-day meds at the same time, you could track them as one combined habit in Birch."],
       ["Is there a free medication habit tracker for Apple Watch?", "Birch is free for iPhone and Apple Watch. You can log a once-a-day medication as a yes/no habit with one tap and see your streak, but it's not a medication management app. For complex schedules, use a medication-specific app. No ads, no subscription, no account."],
     ],
