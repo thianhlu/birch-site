@@ -419,7 +419,7 @@ footer .links { display: flex; gap: 18px; }
 .gdevice-copy p + p { margin-top: 12px; }
 .gdevice-copy ul { margin-top: 12px; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; }
 .gdevice-copy .store-badge { margin-top: 28px; text-decoration: none; }
-.gdevice-art { position: relative; align-self: stretch; min-height: 540px; -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, #000 70%, transparent 100%); }
+.gdevice-art { position: relative; align-self: stretch; height: 480px; }
 .gd-phone { position: absolute; width: 260px; left: 50%; top: 0; transform: translateX(-72%) rotate(-5deg); transform-origin: 50% 0; }
 .gd-watch { position: absolute; width: 170px; left: 50%; top: 210px; transform: translateX(32%) rotate(7deg); z-index: 2; }
 .gdevice.is-dark { background: var(--dark); color: #fff; }
@@ -628,7 +628,7 @@ footer .links { display: flex; gap: 18px; }
   .pull { margin-top: 40px; padding: 28px 24px; border-radius: 26px; }
   .gdevice { grid-template-columns: 1fr; gap: 8px; margin: 64px 8px 0; padding: 48px 22px 0; border-radius: 30px; }
   .gdevice-copy { padding-bottom: 0; }
-  .gdevice-art { min-height: 380px; -webkit-mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); mask-image: linear-gradient(to bottom, #000 72%, transparent 100%); }
+  .gdevice-art { height: 340px; }
   .gd-phone { width: 190px; }
   .gd-watch { width: 124px; top: 150px; }
   .gfaq { margin-top: 80px; padding: 0 16px; }
