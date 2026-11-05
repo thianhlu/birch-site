@@ -95,6 +95,16 @@ const V: Record<string, GuideVisual> = {
     quote: "The habit matters more than the length of any one session.",
     chips: ["1 to 5 minutes a day", "Breathing + habits"],
   },
+  "how-to-build-a-habit": {
+    photo: "/photos/journal.webp",
+    alt: "Hands checking off habits in a paper journal beside water and vitamins",
+    tone: "#e8dfe3",
+    ink: "#6b4a5a",
+    phone: "newhabit",
+    watch: "start",
+    quote: "Small beats ambitious. Start tiny.",
+    chips: ["Tiny habits", "Stack, track, repeat"],
+  },
 };
 
 export const visualFor = (slug: string): GuideVisual => V[slug];
