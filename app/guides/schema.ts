@@ -104,7 +104,7 @@ export function indexJsonLd() {
           itemListElement: GUIDES.map((g, i) => ({
             "@type": "ListItem",
             position: i + 1,
-            url: guideUrl(g),
+            item: guideUrl(g),
             name: g.h1,
           })),
         },
